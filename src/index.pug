@@ -8,9 +8,50 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
   body
-    .wrapper
-      .maincontent
-        h1 Week #1
-        // +image('content/user.jpg', 'user-pic')
-        // +icon('link', 'link-class')
-        // .icon-bg
+
+    .debug
+      div
+        div
+          - for(let i = 0; i < 12; i++)
+            div
+
+    .main-background 
+      .wrapper
+        .header
+          a(href="/").header__logo БД
+
+          nav.header__nav
+            ul.menu
+              li
+                a(href="#") Обо мне
+              li
+                a(href="#") Навыки
+              li
+                a(href="#") Работы
+              li
+                a(href="#") Отзывы
+          
+          ul.header__contacts
+            li
+              a(href="https://www.instagram.com/html_css_js_php_developer/" target="_blank").icon.insta.link-class
+            li
+              a(href="https://github.com/belocer" target="_blank").icon.github.link-class
+            li
+              a(href="https://vk.com/html_css_js_php_postgresql" target="_blank").icon.vk.link-class
+            li
+              a(href="mailto:belocerkovecden@gmail.com").icon.message.link-class
+
+        .wrap_h1
+          h1 Денис #[br] Белоцерковец
+          span Личный сайт #[br] веб разработчика
+
+        a(href="#").info-scroll
+          span.info-scroll__text Скролл
+          span.wrap-info-scroll
+            span.info-scroll__icon
+            span.info-scroll__icon
+
+        .maincontent            
+          // +image('content/user.jpg', 'user-pic')
+          // +icon('link', 'link-class')
+          // .icon-bg
