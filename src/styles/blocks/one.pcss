@@ -45,13 +45,14 @@
   display: flex;
   align-items: baseline;
 
-  &:hover .wrap-info-scroll {
-    transform: translate-Y(7px);
+  &:hover .info-scroll__text::after,
+  &:focus .info-scroll__text::after {
+    width: 100%;
   }
 
-  &:hover .wrap-info-text::after,
-  &:focus .wrap-info-text::after {
-    width: 100%;
+  &:hover .wrap-info-scroll .info-scroll__icon:first-child,
+  &:focus .wrap-info-scroll .info-scroll__icon:first-child {
+    margin-right: -0.8rem;
   }
 
   &__text {
