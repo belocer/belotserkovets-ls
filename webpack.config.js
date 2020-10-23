@@ -21,11 +21,6 @@ module.exports = (env, argv) => {
     ],
   };
 
-  const less = { // LESS
-    test: /\.less$/,
-    loader: ['style-loader', 'css-loader', 'less-loader'],
-  };
-
   const vue = {
     test: /\.vue$/,
     loader: "vue-loader",
@@ -101,7 +96,7 @@ module.exports = (env, argv) => {
       chunkFilename: "[chunkhash].js",
     },
     module: {
-      rules: [less, pcss, vue, js, files, svg, pug],
+      rules: [pcss, vue, js, files, svg, pug],
     },
     resolve: {
       alias: {

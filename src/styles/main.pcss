@@ -1,36 +1,34 @@
-@import './smart-grid.scss';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-@import './mixins.pcss';
-@import './blocks/*.pcss';
-@import './layout/header.pcss';
+@import "./mixins.pcss";
+@import "./smart-grid.pcss";
+@import "./layout/header.pcss";
+@import "./blocks/*.pcss";
 
-html, 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+
+html,
 body {
   font-size: 16px;
   @include reset();
   font-family: "Open Sans";
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
-  transition: all .2s;
+  transition: all 0.2s;
   @include reset();
 }
 
-.debug {
-  @include debug(#755fac, 1px solid #4AFFFF);
-  height: 100vh;
-  position: fixed;
-  width: 100%;
-}
+/* .debug {
+  @include debug(#755fac, 1px solid #4affff);
+} */
 
 .wrapper {
   @include wrapper();
 }
 
 a:active,
-a:hover
-{
+a:hover {
   outline: 0;
 }
 

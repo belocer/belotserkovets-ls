@@ -1,9 +1,117 @@
-.icon-bg {
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-  background: svg-load('github.svg', fill=$text-color, width=100%, height=100%);
-  &:hover {
-    background: svg-load('github.svg', fill=#55ddcc, width=100%, height=100%);
+/* Cart User */
+.wrap_cart {
+  margin: 66% auto 0;
+  max-width: 925px;
+  display: flex;
+  justify-content: center;
+}
+
+figure.cart-left {
+  margin: 0;
+
+  .cart_photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  figcaption.cart_description {
+    margin-left: -100px;
+    margin-top: 78px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.cart_key {
+  margin-right: 80px;
+
+  ul.key {
+    li {
+      color: rgba(255, 255, 255, 0.3);
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.cart_val {
+  ul.val {
+    li {
+      color: #ffffff;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.cart-right {
+  margin-left: 160px;
+
+  header.head {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 21px;
+  }
+
+  h2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #ffffff;
+    margin-bottom: 31px;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 77px;
+  }
+
+  em {
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: svg-load(
+        "red-star.svg",
+        fill=rgba(#8c1b12, 1),
+        width=100%,
+        height=100%
+      );
+      position: absolute;
+      top: 0;
+      left: -50px;
+    }
   }
 }

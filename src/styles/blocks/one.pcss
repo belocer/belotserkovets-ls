@@ -1,11 +1,36 @@
 .main-background {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  width: 100vw;
+  /*height: 100vh;*/
+  /*overflow-x: hidden;*/
   position: relative;
   z-index: 0;
-  background: url("../images/1800.jpg");
-  background-size: cover;
+  background: url("../images/1800section1.jpg");
+  background-size: 100vw 1733px;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.wrap_relative {
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .wrap_center_h1 {
+    position: relative;
+    z-index: 11;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 .wrap_h1 {
@@ -38,7 +63,7 @@
 
 .info-scroll {
   position: absolute;
-  bottom: 10%;
+  bottom: 2%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-decoration: none;
@@ -69,8 +94,8 @@
       display: block;
       height: 3px;
       width: 0%;
-      background-color: #586ED3;
-      transition: width .3s ease-in-out;
+      background-color: #586ed3;
+      transition: width 0.3s ease-in-out;
     }
   }
 
@@ -82,8 +107,13 @@
       display: inline-block;
       height: 12px;
       width: 12px;
-    //background: url("../images/icons/scroll.svg") center center / cover no-repeat no-repeat;
-      background: svg-load('arrow-down.svg', fill=rgba(255, 255, 255, 1), width=100%, height=100%);
+      //background: url("../images/icons/scroll.svg") center center / cover no-repeat no-repeat;
+      background: svg-load(
+        "arrow-down.svg",
+        fill=rgba(255, 255, 255, 1),
+        width=100%,
+        height=100%
+      );
     }
 
     .info-scroll__icon:first-child {

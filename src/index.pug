@@ -8,13 +8,6 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title Portfolio | main page
   body
-
-    .debug
-      div
-        div
-          - for(let i = 0; i < 12; i++)
-            div
-
     .main-background 
       .wrapper
         .header
@@ -41,15 +34,107 @@ html(lang="en")
             li
               a(href="mailto:belocerkovecden@gmail.com").icon.message.link-class
 
-        .wrap_h1
-          h1 Денис #[br] Белоцерковец
-          span Личный сайт #[br] веб разработчика
+        .wrap_relative
+          .wrap_center_h1
+            .wrap_h1
+              h1 Денис #[br] Белоцерковец
+              span Личный сайт #[br] веб разработчика
 
-        a(href="#").info-scroll
-          span.info-scroll__text Скролл
-          span.wrap-info-scroll
-            span.info-scroll__icon
-            span.info-scroll__icon
+            a(href="#").info-scroll
+              span.info-scroll__text Скролл
+              span.wrap-info-scroll
+                span.info-scroll__icon
+                span.info-scroll__icon
+
+        section.wrap_cart
+          figure.cart-left
+            .cart_photo
+              +image('content/user.jpg', 'user-pic')
+
+            figcaption.cart_description
+
+              - 
+                const key= ['Проживаю:', 'Возраст:', 'Родился:']
+
+              .cart_key
+                ul.key
+                  each item in key
+                    li #{item}
+
+              - 
+                const val= ['Кочубеевское', '36 лет', '4 ноября 1983']
+
+              .cart_val
+                ul.val
+                  each item in val
+                    li #{item}
+          
+          section.cart-right
+            header.head Привет, меня зовут
+
+            h2 Белоцерковец Денис
+
+            p 
+              | Я занимаюсь разработкой современных сайтов и приложений. 
+              | #[br] Мне нравится делать интересные и современные проекты.
+
+            em 
+              | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br] 
+              | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br] 
+              | как тут всё классно и красиво!
+
+      section.useful-you
+        .useful-you__container
+          .useful-you__left-content
+            .hands-keyboard
+              +image('hands.png', 'hands-keyboard')
+
+          .useful-you__right-content
+            h2.useful-you__h2 Чем я могу быть полезен вам
+            h3.useful-you__h3 
+              | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
+              | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
+              | как тут всё классно и красиво!
+
+            .frontend
+              h3 Front-end
+              - const percent1 = 90  
+              - 
+                const frontend_arr= ['HTML5', 'CSS3', 'Javascript', 'Vue.js']
+              
+              ul.frontend__ul
+                - for(let i = 1; i < frontend_arr.length+1; i++)
+                  li #{frontend_arr[i-1]}
+                    svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
+                      circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
+              
+            .backend
+              h3 Back-end
+              - const percent2 = 90  
+              - 
+                const backend_arr= ['PHP', 'WordPress', 'MySQL', 'Laravel']
+              ul.backend__ul
+                - for(let i = 1; i < backend_arr.length+1; i++)
+                  li #{backend_arr[i-1]}
+                    svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
+                      circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent2-(i * 10))*3} 282.6` fill="none")
+
+            .workflow
+              h3 Workflow
+              - const percent3 = 90  
+              - 
+                const workflow_arr= ['Gulp', 'Terminal', 'Git', 'Webpack', 'Composer']
+              ul.workflow__ul
+                - for(let i = 1; i < workflow_arr.length+1; i++)
+                  li #{workflow_arr[i-1]}
+                    svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
+                      circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent3-(i * 10))*3} 282.6` fill="none")
+
+
+
+
+
+
 
         .maincontent            
           // +image('content/user.jpg', 'user-pic')
