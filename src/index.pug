@@ -85,34 +85,35 @@ html(lang="en")
 
       section.useful-you
         .useful-you__container
-          .useful-you__left-content
-            .hands-keyboard
-              +image('hands.png', 'hands-keyboard')
+          .hands-keyboard
+            +image('hands.png', 'hands-keyboard')
 
-          .useful-you__right-content
-            h2.useful-you__h2 Чем я могу быть полезен вам
-            h3.useful-you__h3 
-              | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
-              | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
-              | как тут всё классно и красиво!
+          .useful-you__content
+            .useful-you__head
+              h2.useful-you__h2 Чем я могу быть полезен вам
+              p.useful-you__p
+                | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
+                | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
+                | как тут всё классно и красиво!
 
             .frontend
               h3 Front-end
               - const percent1 = 90  
               - 
                 const frontend_arr= ['HTML5', 'CSS3', 'Javascript', 'Vue.js']
-              
               ul.frontend__ul
                 - for(let i = 1; i < frontend_arr.length+1; i++)
                   li #{frontend_arr[i-1]}
                     svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
                       circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
-              
+
+
             .backend
               h3 Back-end
               - const percent2 = 90  
               - 
-                const backend_arr= ['PHP', 'WordPress', 'MySQL', 'Laravel']
+                const backend_arr= ['PHP', 'Wordpress', 'MySQL', 'Laravel']
+              
               ul.backend__ul
                 - for(let i = 1; i < backend_arr.length+1; i++)
                   li #{backend_arr[i-1]}
@@ -123,20 +124,53 @@ html(lang="en")
               h3 Workflow
               - const percent3 = 90  
               - 
-                const workflow_arr= ['Gulp', 'Terminal', 'Git', 'Webpack', 'Composer']
+                const workflow_arr= ['Gulp', 'Terminal', 'Git', 'Webpack']
               ul.workflow__ul
                 - for(let i = 1; i < workflow_arr.length+1; i++)
                   li #{workflow_arr[i-1]}
                     svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
                       circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent3-(i * 10))*3} 282.6` fill="none")
 
+      section.my-works
+        .wrapper
+          h2.my-works__h2 Мои работы
 
+          .my-works__wrap
+            .my-works__left-content
+              .big-slide
+                +image('mywork1.jpg', 'mywork1.jpg')
 
+                ul.list-slide
+                  - const work= ['mywork1.jpg', 'mywork2.jpg', 'mywork3.jpg', 'mywork4.jpg']
+                    each item in work
+                      li 
+                        +image(item, item)
+              
+                .slide-btn
+                  .slide-btn__right
+                  .slide-btn__left
 
+            .my-works__right-content
+              #slide-number 2
 
+              - const scope_tech= ['HTML', 'CSS', 'Javascript', 'PHP']
+              ul.scope_tech
+                each item in scope_tech
+                  li #{item}
 
+              h3 Сайт школы #[br] образования
 
-        .maincontent            
-          // +image('content/user.jpg', 'user-pic')
-          // +icon('link', 'link-class')
-          // .icon-bg
+              p 
+                | Этот парень проходил обучение #[br]
+                | веб-разработке не где-то, а в LoftSchool! #[br]
+                | 2 месяца только самых тяжелых #[br]
+                | испытаний и бессонных ночей! #[br]
+
+              a(href="#").link-more
+                .link-more__icon
+                .link-more__text Посмотреть сайт
+
+      .maincontent            
+        // +image('content/user.jpg', 'user-pic')
+        // +icon('link', 'link-class')
+        // .icon-bg

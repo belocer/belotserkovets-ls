@@ -1,0 +1,132 @@
+section.my-works {
+  background: #fff;
+  margin-bottom: 209px;
+
+  h2.my-works__h2 {
+    margin-top: 192px;
+    margin-bottom: 83px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: left;
+    color: #333c49;
+  }
+
+  .big-slide {
+    width: 975px;
+    height: 549px;
+    position: relative;
+  }
+}
+
+ul.list-slide {
+  position: absolute;
+  right: 0;
+  bottom: 59px;
+  display: flex;
+
+  li {
+    display: inline-block;
+    width: 183px;
+    height: 103px;
+
+    img {
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      max-height: 100%;
+    }
+  }
+
+  li:first-child {
+    border: 2px solid #d0731b;
+  }
+
+  li.active-slide {
+    border: 2px solid #d0731b;
+  }
+}
+
+.slide-btn {
+  position: absolute;
+  right: -52px;
+  bottom: 58px;
+
+  .slide-btn__left,
+  .slide-btn__right {
+    width: 52px;
+    height: 52px;
+    background: #333c49;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .slide-btn__right {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 18px;
+      background: svg-load(
+          "arrow-down.svg",
+          fill=rgba(255, 255, 255, 1),
+          width=100%,
+          height=100%
+        )
+        no-repeat;
+    }
+  }
+
+  .slide-btn__left {
+    &::after {
+      transform: rotate(180deg);
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 18px;
+      background: svg-load(
+          "arrow-down.svg",
+          fill=rgba(255, 255, 255, 0.5),
+          width=100%,
+          height=100%
+        )
+        no-repeat;
+    }
+  }
+}
+
+.my-works__wrap {
+  display: flex;
+
+  .my-works__left-content {
+    flex: 3 4 975px;
+    max-width: 975px;
+    position: relative;
+    z-index: 30;
+  }
+
+  .my-works__right-content {
+    flex: 2 1 350px;
+    margin-left: 158px;
+    position: relative;
+    z-index: 2;
+
+    #slide-number {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 400px;
+      line-height: 48px;
+      color: #e6e6e6;
+      position: absolute;
+      left: -222px;
+      top: 208px;
+      z-index: 1;
+    }
+
+    ul.scope_tech {
+    }
+  }
+}
