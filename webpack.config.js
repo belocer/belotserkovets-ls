@@ -12,7 +12,7 @@ const {
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = "/";
+  const publicPath = "./";
 
   const pcss = {
     test: /\.(p|post|)css$/,

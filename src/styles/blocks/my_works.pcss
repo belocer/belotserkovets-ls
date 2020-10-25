@@ -14,12 +14,16 @@ section.my-works {
   }
 
   .big-slide {
-    width: 975px;
-    height: 549px;
+    /*width: 975px;*/
+    /* max-height: 549px; */
 
     .big-slide__main-img {
       position: relative;
       z-index: 2;
+
+      img {
+        /*width: 86.3%;*/
+      }
     }
 
     #slide-number {
@@ -29,8 +33,8 @@ section.my-works {
       line-height: 48px;
       color: #e6e6e6;
       position: absolute;
-      right: -172px;
-      top: 208px;
+      right: -10px;
+      top: 212px;
       z-index: 1;
     }
   }
@@ -38,7 +42,7 @@ section.my-works {
 
 .list-slide {
   position: absolute;
-  right: 0;
+  right: 158px;
   bottom: 59px;
   display: flex;
   z-index: 2;
@@ -64,7 +68,7 @@ section.my-works {
 
 .slide-btn {
   position: absolute;
-  right: -52px;
+  right: 106px;
   bottom: 58px;
 
   .slide-btn__left,
@@ -124,15 +128,13 @@ section.my-works {
   display: flex;
 
   .my-works__left-content {
-    flex: 3 4 975px;
-    max-width: 975px;
+    flex: 3 4 1133px;
     position: relative;
     z-index: 30;
   }
 
   .my-works__right-content {
     flex: 2 1 350px;
-    margin-left: 158px;
     position: relative;
     z-index: 2;
 
