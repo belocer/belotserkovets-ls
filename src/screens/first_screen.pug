@@ -1,0 +1,57 @@
+section.main-background.first-screen
+  .wrapper
+    .header
+      a(href="/").logo БД
+
+      include ./../component/menu.pug
+      
+      +social("social-header")
+
+    .wrap_relative
+      .wrap_center_h1
+        .main-name
+          h1.main-name__name Денис #[br] Белоцерковец
+          span.main-name__description Личный сайт #[br] веб разработчика
+
+        a(href="/#about_me").info-scroll
+          span.info-scroll__text Скролл
+          span.wrap-info-scroll__icon
+            span.info-scroll__icon
+            span.info-scroll__icon
+
+    section.wrap_cart#about_me
+      figure.cart-left
+        .cart-photo
+          +image('content/user.jpg', 'user-pic').cart-photo__img
+
+        figcaption.cart-photo__description
+
+          - 
+            const key= ['Проживаю:', 'Возраст:', 'Родился:']
+
+          .cart-photo__key
+            ul.key
+              each item in key
+                li #{item}
+
+          - 
+            const val= ['Кочубеевское', '36 лет', '4 ноября 1983']
+
+          .cart-photo__val
+            ul.val
+              each item in val
+                li #{item}
+      
+      section.cart-description
+        header.cart-description__head Привет, меня зовут
+
+        h2.cart-description__first-last-name Белоцерковец Денис
+
+        p.cart-description__description
+          | Я занимаюсь разработкой современных сайтов и приложений. 
+          | #[br] Мне нравится делать интересные и современные проекты.
+
+        em.cart-description__text
+          | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br] 
+          | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br] 
+          | как тут всё классно и красиво!

@@ -1,8 +1,8 @@
-section.my-works {
+section.works {
   background: $text-color;
   margin-bottom: 209px;
 
-  h2.my-works__headers {
+  h2.works__headers {
     margin-top: 192px;
     margin-bottom: 83px;
     font-style: normal;
@@ -13,7 +13,7 @@ section.my-works {
     color: #333c49;
   }
 
-  .my-works__main-img {
+  .works__main-img {
     position: relative;
     z-index: 2;
   }
@@ -25,7 +25,7 @@ section.my-works {
     line-height: 48px;
     color: #e6e6e6;
     position: absolute;
-    right: -10px;
+    right: -170px;
     top: 212px;
     z-index: -1;
   }
@@ -33,7 +33,7 @@ section.my-works {
 
 .slider__list {
   position: absolute;
-  right: 158px;
+  right: 0;
   bottom: 59px;
   display: flex;
   z-index: 2;
@@ -59,7 +59,7 @@ section.my-works {
 
 .slider__switch {
   position: absolute;
-  right: 106px;
+  right: -52px;
   bottom: 58px;
 
   .slider__switch-left,
@@ -133,16 +133,21 @@ section.my-works {
   }
 }
 
-.my-works__wrap {
+.works__wrap {
   display: flex;
 
   .slider {
     flex: 3 4 1133px;
     position: relative;
     z-index: 30;
+
+    .slider__main-img {
+      position: relative;
+      max-width: 975px;
+    }
   }
 
-  .my-works__slider-description {
+  .works__slider-description {
     flex: 2 1 350px;
     position: relative;
     z-index: 2;

@@ -1,0 +1,43 @@
+section.skills#skills
+  .skills__head
+    h2.skills__header Чем я могу быть полезен вам
+    p.skills__description
+      | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
+      | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
+      | как тут всё классно и красиво!
+
+  .skills__container
+    .hands-keyboard
+      +image('hands.png', 'hands-keyboard')
+
+    .wrap_skills
+      .frontend
+        h3.frontend__head Front-end
+        - const percent1 = 90  
+        - const frontend_arr= ['HTML5', 'CSS3', 'Javascript', 'Vue.js']
+        ul.frontend__list
+          - for(let i = 1; i < frontend_arr.length+1; i++)
+            li.frontend__item #{frontend_arr[i-1]}
+              svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
+                circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
+
+      .backend
+        h3.backend__head Back-end
+        - const percent2 = 90  
+        - const backend_arr= ['PHP', 'Wordpress', 'MySQL', 'Laravel']
+        
+        ul.backend__list
+          - for(let i = 1; i < backend_arr.length+1; i++)
+            li.backend__item #{backend_arr[i-1]}
+              svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
+                circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
+
+      .workflow
+        h3.workflow__head Workflow
+        - const percent3 = 90  
+        - const workflow_arr= ['Gulp', 'Terminal', 'Git', 'Webpack']
+        ul.workflow__list
+          - for(let i = 1; i < workflow_arr.length+1; i++)
+            li.workflow__item #{workflow_arr[i-1]}
+              svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
+                circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
