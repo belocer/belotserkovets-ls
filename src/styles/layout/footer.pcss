@@ -100,19 +100,6 @@ footer.footer .wrapper {
       justify-content: center;
       align-items: center;
 
-      a.social-footer__link {
-        width: 50px;
-        height: 50px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        position: relative;
-
-        &:focus,
-        &:hover {
-          border: 1px solid $links-color;
-        }
-      }
-
       .social-footer__link {
         display: flex;
         justify-content: center;
@@ -253,5 +240,15 @@ footer.footer .wrapper {
     font-size: 16px;
     line-height: 22px;
     color: #ffffff;
+  }
+}
+
+nav.header__nav ul.menu li a.menu-footer {
+  display: inline-block;
+  margin-bottom: 47px;
+
+  &::after {
+    content: "";
+    display: none;
   }
 }
