@@ -32,7 +32,7 @@
   }
 }
 
-.wrap_h1 {
+.main-name {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,7 +41,7 @@
     left: 60%;
   }
 
-  h1 {
+  h1.main-name__name {
     font-family: Open Sans;
     font-style: normal;
     font-weight: 800;
@@ -50,7 +50,7 @@
     color: $text-color;
   }
 
-  span {
+  span.main-name__description {
     display: inline-block;
     font-family: Open Sans;
     font-style: normal;
@@ -77,8 +77,8 @@
     width: 100%;
   }
 
-  &:hover .wrap-info-scroll .info-scroll__icon:first-child,
-  &:focus .wrap-info-scroll .info-scroll__icon:first-child {
+  &:hover .wrap-info-scroll__icon .info-scroll__icon:first-child,
+  &:focus .wrap-info-scroll__icon .info-scroll__icon:first-child {
     margin-right: -0.8rem;
   }
 
@@ -101,7 +101,7 @@
     }
   }
 
-  .wrap-info-scroll {
+  .wrap-info-scroll__icon {
     display: inline-block;
     transform: rotate(90deg);
 

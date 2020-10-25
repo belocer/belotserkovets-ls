@@ -30,7 +30,7 @@ section.useful-you {
   margin: 144px auto 0;
   max-width: 601px;
 
-  h2.useful-you__h2 {
+  h2.useful-you__header {
     font-style: normal;
     font-weight: bold;
     font-size: 30px;
@@ -40,7 +40,7 @@ section.useful-you {
     text-align: left;
   }
 
-  p.useful-you__p {
+  p.useful-you__description {
     display: inline-block;
     font-style: normal;
     font-weight: 600;
@@ -57,7 +57,9 @@ section.useful-you {
   width: 100%;
   margin-left: 135px;
 
-  h3 {
+  h3.frontend__head,
+  h3.backend__head,
+  h3.workflow__head {
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -67,14 +69,16 @@ section.useful-you {
   }
 }
 
-ul.frontend__ul,
-ul.backend__ul,
-ul.workflow__ul {
+ul.frontend__list,
+ul.backend__list,
+ul.workflow__list {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 55px;
 
-  li {
+  li.workflow__item,
+  li.backend__item,
+  li.frontend__item {
     font-style: normal;
     font-weight: bold;
     font-size: 18px;

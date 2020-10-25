@@ -17,27 +17,27 @@ block content
 
       .wrap_relative
         .wrap_center_h1
-          .wrap_h1
-            h1 Денис #[br] Белоцерковец
-            span Личный сайт #[br] веб разработчика
+          .main-name
+            h1.main-name__name Денис #[br] Белоцерковец
+            span.main-name__description Личный сайт #[br] веб разработчика
 
           a(href="/#about_me").info-scroll
             span.info-scroll__text Скролл
-            span.wrap-info-scroll
+            span.wrap-info-scroll__icon
               span.info-scroll__icon
               span.info-scroll__icon
 
       section.wrap_cart#about_me
         figure.cart-left
-          .cart_photo
-            +image('content/user.jpg', 'user-pic')
+          .cart-photo
+            +image('content/user.jpg', 'user-pic').cart-photo__img
 
-          figcaption.cart_description
+          figcaption.cart-photo__description
 
             - 
               const key= ['Проживаю:', 'Возраст:', 'Родился:']
 
-            .cart_key
+            .cart-photo__key
               ul.key
                 each item in key
                   li #{item}
@@ -45,29 +45,29 @@ block content
             - 
               const val= ['Кочубеевское', '36 лет', '4 ноября 1983']
 
-            .cart_val
+            .cart-photo__val
               ul.val
                 each item in val
                   li #{item}
         
-        section.cart-right
-          header.head Привет, меня зовут
+        section.cart-description
+          header.cart-description__head Привет, меня зовут
 
-          h2 Белоцерковец Денис
+          h2.cart-description__first-last-name Белоцерковец Денис
 
-          p 
+          p.cart-description__description
             | Я занимаюсь разработкой современных сайтов и приложений. 
             | #[br] Мне нравится делать интересные и современные проекты.
 
-          em 
+          em.cart-description__text
             | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br] 
             | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br] 
             | как тут всё классно и красиво!
 
     section.useful-you#skills
       .useful-you__head
-        h2.useful-you__h2 Чем я могу быть полезен вам
-        p.useful-you__p
+        h2.useful-you__header Чем я могу быть полезен вам
+        p.useful-you__description
           | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
           | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
           | как тут всё классно и красиво!
@@ -78,78 +78,77 @@ block content
 
         .wrap_skills
           .frontend
-            h3 Front-end
+            h3.frontend__head Front-end
             - const percent1 = 90  
             - 
               const frontend_arr= ['HTML5', 'CSS3', 'Javascript', 'Vue.js']
-            ul.frontend__ul
+            ul.frontend__list
               - for(let i = 1; i < frontend_arr.length+1; i++)
-                li #{frontend_arr[i-1]}
+                li.frontend__item #{frontend_arr[i-1]}
                   svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
                     circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
 
           .backend
-            h3 Back-end
+            h3.backend__head Back-end
             - const percent2 = 90  
             - 
               const backend_arr= ['PHP', 'Wordpress', 'MySQL', 'Laravel']
             
-            ul.backend__ul
+            ul.backend__list
               - for(let i = 1; i < backend_arr.length+1; i++)
-                li #{backend_arr[i-1]}
+                li.backend__item #{backend_arr[i-1]}
                   svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
                     circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
 
           .workflow
-            h3 Workflow
+            h3.workflow__head Workflow
             - const percent3 = 90  
             - 
               const workflow_arr= ['Gulp', 'Terminal', 'Git', 'Webpack']
-            ul.workflow__ul
+            ul.workflow__list
               - for(let i = 1; i < workflow_arr.length+1; i++)
-                li #{workflow_arr[i-1]}
+                li.workflow__item #{workflow_arr[i-1]}
                   svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
                     circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
 
     section.my-works#my-works
       .wrapper
-        h2.my-works__h2 Мои работы
+        h2.my-works__headers Мои работы
 
         .my-works__wrap
-          .my-works__left-content
-            .big-slide
-              .big-slide__main-img
-                +image('mywork1.jpg', 'mywork1.jpg')
+          .slider
+            .slider__main-img
+              +image('mywork1.jpg', 'mywork1.jpg')
 
-              #slide-number 2
+            #slider__number 2
 
-              .list-slide                    
-                    button(type="button").list-slide__btn.list-slide__btn_active
-                      +image('mywork1.jpg', 'mywork1.jpg')
+            .slider__list                    
+                  button(type="button").slider__btn.slider__btn_active
+                    +image('mywork1.jpg', 'mywork1.jpg').slider__small-img
 
-                    button(type="button").list-slide__btn
-                      +image('mywork2.jpg', 'mywork2.jpg')
+                  button(type="button").slider__btn
+                    +image('mywork2.jpg', 'mywork2.jpg').slider__small-img
 
-                    button(type="button").list-slide__btn
-                      +image('mywork3.jpg', 'mywork3.jpg')
+                  button(type="button").slider__btn
+                    +image('mywork3.jpg', 'mywork3.jpg').slider__small-img
 
-                    button(type="button").list-slide__btn
-                      +image('mywork4.jpg', 'mywork4.jpg')
-            
-              .slide-btn
-                button(type="button").slide-btn__right
-                button(type="button").slide-btn__left
+                  button(type="button").slider__btn
+                    +image('mywork4.jpg', 'mywork4.jpg').slider__small-img
+          
+            .slider__switch
+              button(type="button").slider__switch-right
+              button(type="button").slider__switch-left
 
-          .my-works__right-content
+          .my-works__slider-description
 
             - const scope_tech= ['HTML', 'CSS', 'Javascript', 'PHP']
-            ul.scope_tech
+            ul.scope-tech
               each item in scope_tech
-                li #{item}
+                li.scope-tech__item #{item}
 
-            h3 Сайт школы #[br] образования
+            h3.slider-description__header Сайт школы #[br] образования
 
-            p 
+            p.slider-description__text
               | Этот парень проходил обучение #[br]
               | веб-разработке не где-то, а в LoftSchool! #[br]
               | 2 месяца только самых тяжелых #[br]
@@ -159,43 +158,43 @@ block content
               .link-more__icon
               .link-more__text Посмотреть сайт
 
-    section.talk-about-me#talk-about-me
+    section.reviews#reviews
       .wrapper
-        .wrap-first-line
-          h2.talk-about-me__h2 Что обо мне говорят
-          .talk-about-me__btns
-            .talk-about-me__left-btn
-            .talk-about-me__right-btn
+        .reviews__head
+          h2.reviews__header Что обо мне говорят
+          .reviews__btns
+            .reviews__left-btn
+            .reviews__right-btn
 
         .slides
           .slide
-            p
+            p.slide-text
               | Этот парень проходил обучение #[br]
               | веб-разработке не где-то, а в LoftSchool! #[br]
               | 4,5 месяца только самых тяжелых #[br]
               | испытаний и бессонных ночей! #[br]
 
-            .review-user
-              .review-user__photo
+            .slide-user
+              .slide-user__photo
                 +image('content/dmitriy.png', 'dmitriy.png')
               
-              .review-user__description
-                .review-user__name Ковальчук Дмитрий
-                .review-user__post Основатель Loftschool
+              .slide-user__description
+                .slide-user__name Ковальчук Дмитрий
+                .slide-user__post Основатель Loftschool
 
           .slide
-            p
+            p.slide-text
               | Этот код выдержит любые испытания. #[br]
               | Только пожалуйста, не загружайте сайт #[br]
               | на слишком старых браузерах #[br]
 
-            .review-user
-              .review-user__photo
+            .slide-user
+              .slide-user__photo
                 +image('content/vladimir.png', 'vladimir.png')
               
-              .review-user__description
-                .review-user__name Владимир Сабанцев
-                .review-user__post Основатель Loftschool
+              .slide-user__description
+                .slide-user__name Владимир Сабанцев
+                .slide-user__post Основатель Loftschool
 
     footer.footer
       .wrapper
@@ -208,7 +207,7 @@ block content
 
           include ./component/menu.pug
 
-          p
+          p.description
             | Этот сайт я сделал в рамках обучения в #[br]
             | Школе онлайн образования Loftschool
 
