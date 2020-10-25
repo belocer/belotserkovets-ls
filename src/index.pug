@@ -1,26 +1,222 @@
+extends ./layout/main.layout.pug
 include ./mixins.pug
 
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
-  body
-    .main-background 
-      .wrapper
-        .header
-          a(href="/").header__logo БД
+block content
+  .main-background 
+    .wrapper
+      .header
+        a(href="/").header__logo БД
 
-          nav.header__nav
-            ul.menu
-              - const menu= ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
-                each item in menu
-                  li 
-                    a(href="#") #{item}
-          
-          ul.header__contacts
+        include ./component/menu.pug
+        
+        ul.header__contacts
+          li
+            a(href="https://www.instagram.com/html_css_js_php_developer/" target="_blank").icon.insta.link-class
+          li
+            a(href="https://github.com/belocer" target="_blank").icon.github.link-class
+          li
+            a(href="https://vk.com/html_css_js_php_postgresql" target="_blank").icon.vk.link-class
+          li
+            a(href="mailto:belocerkovecden@gmail.com").icon.message.link-class
+
+      .wrap_relative
+        .wrap_center_h1
+          .wrap_h1
+            h1 Денис #[br] Белоцерковец
+            span Личный сайт #[br] веб разработчика
+
+          a(href="/#scroll_here").info-scroll
+            span.info-scroll__text Скролл
+            span.wrap-info-scroll
+              span.info-scroll__icon
+              span.info-scroll__icon
+
+      section.wrap_cart#scroll_here
+        figure.cart-left
+          .cart_photo
+            +image('content/user.jpg', 'user-pic')
+
+          figcaption.cart_description
+
+            - 
+              const key= ['Проживаю:', 'Возраст:', 'Родился:']
+
+            .cart_key
+              ul.key
+                each item in key
+                  li #{item}
+
+            - 
+              const val= ['Кочубеевское', '36 лет', '4 ноября 1983']
+
+            .cart_val
+              ul.val
+                each item in val
+                  li #{item}
+        
+        section.cart-right
+          header.head Привет, меня зовут
+
+          h2 Белоцерковец Денис
+
+          p 
+            | Я занимаюсь разработкой современных сайтов и приложений. 
+            | #[br] Мне нравится делать интересные и современные проекты.
+
+          em 
+            | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br] 
+            | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br] 
+            | как тут всё классно и красиво!
+
+    section.useful-you
+      .useful-you__container
+        .hands-keyboard
+          +image('hands.png', 'hands-keyboard')
+
+        .useful-you__content
+          .useful-you__head
+            h2.useful-you__h2 Чем я могу быть полезен вам
+            p.useful-you__p
+              | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
+              | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
+              | как тут всё классно и красиво!
+
+          .frontend
+            h3 Front-end
+            - const percent1 = 90  
+            - 
+              const frontend_arr= ['HTML5', 'CSS3', 'Javascript', 'Vue.js']
+            ul.frontend__ul
+              - for(let i = 1; i < frontend_arr.length+1; i++)
+                li #{frontend_arr[i-1]}
+                  svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
+                    circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
+
+          .backend
+            h3 Back-end
+            - const percent2 = 90  
+            - 
+              const backend_arr= ['PHP', 'Wordpress', 'MySQL', 'Laravel']
+            
+            ul.backend__ul
+              - for(let i = 1; i < backend_arr.length+1; i++)
+                li #{backend_arr[i-1]}
+                  svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
+                    circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent2-(i * 10))*3} 282.6` fill="none")
+
+          .workflow
+            h3 Workflow
+            - const percent3 = 90  
+            - 
+              const workflow_arr= ['Gulp', 'Terminal', 'Git', 'Webpack']
+            ul.workflow__ul
+              - for(let i = 1; i < workflow_arr.length+1; i++)
+                li #{workflow_arr[i-1]}
+                  svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
+                    circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent3-(i * 10))*3} 282.6` fill="none")
+
+    section.my-works
+      .wrapper
+        h2.my-works__h2 Мои работы
+
+        .my-works__wrap
+          .my-works__left-content
+            .big-slide
+              .big-slide__main-img
+                +image('mywork1.jpg', 'mywork1.jpg')
+
+              #slide-number 2
+
+              .list-slide                    
+                    button.list-slide__btn.list-slide__btn_active
+                      +image('mywork1.jpg', 'mywork1.jpg')
+
+                    button.list-slide__btn
+                      +image('mywork2.jpg', 'mywork2.jpg')
+
+                    button.list-slide__btn
+                      +image('mywork3.jpg', 'mywork3.jpg')
+
+                    button.list-slide__btn
+                      +image('mywork4.jpg', 'mywork4.jpg')
+            
+              .slide-btn
+                button.slide-btn__right
+                button.slide-btn__left
+
+          .my-works__right-content
+
+            - const scope_tech= ['HTML', 'CSS', 'Javascript', 'PHP']
+            ul.scope_tech
+              each item in scope_tech
+                li #{item}
+
+            h3 Сайт школы #[br] образования
+
+            p 
+              | Этот парень проходил обучение #[br]
+              | веб-разработке не где-то, а в LoftSchool! #[br]
+              | 2 месяца только самых тяжелых #[br]
+              | испытаний и бессонных ночей! #[br]
+
+            a(href="#").link-more
+              .link-more__icon
+              .link-more__text Посмотреть сайт
+
+    section.talk-about-me
+      .wrapper
+        .wrap-first-line
+          h2.talk-about-me__h2 Что обо мне говорят
+          .talk-about-me__btns
+            .talk-about-me__left-btn
+            .talk-about-me__right-btn
+
+        .slides
+          .slide
+            p
+              | Этот парень проходил обучение #[br]
+              | веб-разработке не где-то, а в LoftSchool! #[br]
+              | 4,5 месяца только самых тяжелых #[br]
+              | испытаний и бессонных ночей! #[br]
+
+            .review-user
+              .review-user__photo
+                +image('content/dmitriy.png', 'dmitriy.png')
+              
+              .review-user__description
+                .review-user__name Ковальчук Дмитрий
+                .review-user__post Основатель Loftschool
+
+          .slide
+            p
+              | Этот код выдержит любые испытания. #[br]
+              | Только пожалуйста, не загружайте сайт #[br]
+              | на слишком старых браузерах #[br]
+
+            .review-user
+              .review-user__photo
+                +image('content/vladimir.png', 'vladimir.png')
+              
+              .review-user__description
+                .review-user__name Владимир Сабанцев
+                .review-user__post Основатель Loftschool
+
+    footer.footer
+      .wrapper
+        .year &#169; 2020
+        .data-user
+          .name Владимир #[br] Астахов
+          .descr Личный сайт #[br] веб-разработчика
+        
+        .menu-link
+
+          include ./component/menu.pug
+
+          p
+            | Этот сайт я сделал в рамках обучения в #[br]
+            | Школе онлайн образования Loftschool
+
+          ul.footer__contacts
             li
               a(href="https://www.instagram.com/html_css_js_php_developer/" target="_blank").icon.insta.link-class
             li
@@ -30,218 +226,10 @@ html(lang="en")
             li
               a(href="mailto:belocerkovecden@gmail.com").icon.message.link-class
 
-        .wrap_relative
-          .wrap_center_h1
-            .wrap_h1
-              h1 Денис #[br] Белоцерковец
-              span Личный сайт #[br] веб разработчика
-
-            a(href="/#scroll_here").info-scroll
-              span.info-scroll__text Скролл
-              span.wrap-info-scroll
-                span.info-scroll__icon
-                span.info-scroll__icon
-
-        section.wrap_cart#scroll_here
-          figure.cart-left
-            .cart_photo
-              +image('content/user.jpg', 'user-pic')
-
-            figcaption.cart_description
-
-              - 
-                const key= ['Проживаю:', 'Возраст:', 'Родился:']
-
-              .cart_key
-                ul.key
-                  each item in key
-                    li #{item}
-
-              - 
-                const val= ['Кочубеевское', '36 лет', '4 ноября 1983']
-
-              .cart_val
-                ul.val
-                  each item in val
-                    li #{item}
+        .quote
+          p
+            | Всегда пишите код так, будто сопровождать его будет #[br]
+            | склонный к насилию психопат, который знает где вы #[br]
+            | живете
           
-          section.cart-right
-            header.head Привет, меня зовут
-
-            h2 Белоцерковец Денис
-
-            p 
-              | Я занимаюсь разработкой современных сайтов и приложений. 
-              | #[br] Мне нравится делать интересные и современные проекты.
-
-            em 
-              | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br] 
-              | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br] 
-              | как тут всё классно и красиво!
-
-      section.useful-you
-        .useful-you__container
-          .hands-keyboard
-            +image('hands.png', 'hands-keyboard')
-
-          .useful-you__content
-            .useful-you__head
-              h2.useful-you__h2 Чем я могу быть полезен вам
-              p.useful-you__p
-                | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
-                | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
-                | как тут всё классно и красиво!
-
-            .frontend
-              h3 Front-end
-              - const percent1 = 90  
-              - 
-                const frontend_arr= ['HTML5', 'CSS3', 'Javascript', 'Vue.js']
-              ul.frontend__ul
-                - for(let i = 1; i < frontend_arr.length+1; i++)
-                  li #{frontend_arr[i-1]}
-                    svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
-                      circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
-
-            .backend
-              h3 Back-end
-              - const percent2 = 90  
-              - 
-                const backend_arr= ['PHP', 'Wordpress', 'MySQL', 'Laravel']
-              
-              ul.backend__ul
-                - for(let i = 1; i < backend_arr.length+1; i++)
-                  li #{backend_arr[i-1]}
-                    svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
-                      circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent2-(i * 10))*3} 282.6` fill="none")
-
-            .workflow
-              h3 Workflow
-              - const percent3 = 90  
-              - 
-                const workflow_arr= ['Gulp', 'Terminal', 'Git', 'Webpack']
-              ul.workflow__ul
-                - for(let i = 1; i < workflow_arr.length+1; i++)
-                  li #{workflow_arr[i-1]}
-                    svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
-                      circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent3-(i * 10))*3} 282.6` fill="none")
-
-      section.my-works
-        .wrapper
-          h2.my-works__h2 Мои работы
-
-          .my-works__wrap
-            .my-works__left-content
-              .big-slide
-                .big-slide__main-img
-                  +image('mywork1.jpg', 'mywork1.jpg')
-
-                #slide-number 2
-
-                .list-slide                    
-                      button.list-slide__btn.list-slide__btn_active
-                        +image('mywork1.jpg', 'mywork1.jpg')
-
-                      button.list-slide__btn
-                        +image('mywork2.jpg', 'mywork2.jpg')
-
-                      button.list-slide__btn
-                        +image('mywork3.jpg', 'mywork3.jpg')
-
-                      button.list-slide__btn
-                        +image('mywork4.jpg', 'mywork4.jpg')
-              
-                .slide-btn
-                  button.slide-btn__right
-                  button.slide-btn__left
-
-            .my-works__right-content
-
-              - const scope_tech= ['HTML', 'CSS', 'Javascript', 'PHP']
-              ul.scope_tech
-                each item in scope_tech
-                  li #{item}
-
-              h3 Сайт школы #[br] образования
-
-              p 
-                | Этот парень проходил обучение #[br]
-                | веб-разработке не где-то, а в LoftSchool! #[br]
-                | 2 месяца только самых тяжелых #[br]
-                | испытаний и бессонных ночей! #[br]
-
-              a(href="#").link-more
-                .link-more__icon
-                .link-more__text Посмотреть сайт
-
-      section.talk-about-me
-        .wrapper
-          .wrap-first-line
-            h2.talk-about-me__h2 Что обо мне говорят
-            .talk-about-me__btns
-              .talk-about-me__left-btn
-              .talk-about-me__right-btn
-
-          .slides
-            .slide
-              p
-                | Этот парень проходил обучение #[br]
-                | веб-разработке не где-то, а в LoftSchool! #[br]
-                | 4,5 месяца только самых тяжелых #[br]
-                | испытаний и бессонных ночей! #[br]
-
-              .review-user
-                .review-user__photo
-                  +image('content/dmitriy.png', 'dmitriy.png')
-                
-                .review-user__description
-                  .review-user__name Ковальчук Дмитрий
-                  .review-user__post Основатель Loftschool
-
-            .slide
-              p
-                | Этот код выдержит любые испытания. #[br]
-                | Только пожалуйста, не загружайте сайт #[br]
-                | на слишком старых браузерах #[br]
-
-              .review-user
-                .review-user__photo
-                  +image('content/vladimir.png', 'vladimir.png')
-                
-                .review-user__description
-                  .review-user__name Владимир Сабанцев
-                  .review-user__post Основатель Loftschool
-
-      footer.footer
-        .wrapper
-          .year &#169; 2020
-          .data-user
-            .name Владимир #[br] Астахов
-            .descr Личный сайт #[br] веб-разработчика
-          
-          .menu-link
-            menu.menu
-              each item in menu
-                li 
-                  a(href="#") #{item}
-            p
-              | Этот сайт я сделал в рамках обучения в #[br]
-              | Школе онлайн образования Loftschool
-
-            ul.footer__contacts
-              li
-                a(href="https://www.instagram.com/html_css_js_php_developer/" target="_blank").icon.insta.link-class
-              li
-                a(href="https://github.com/belocer" target="_blank").icon.github.link-class
-              li
-                a(href="https://vk.com/html_css_js_php_postgresql" target="_blank").icon.vk.link-class
-              li
-                a(href="mailto:belocerkovecden@gmail.com").icon.message.link-class
-
-          .quote
-            p
-              | Всегда пишите код так, будто сопровождать его будет #[br]
-              | склонный к насилию психопат, который знает где вы #[br]
-              | живете
-            
-            span Martin Golding
+          span Martin Golding
