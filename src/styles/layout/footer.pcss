@@ -91,29 +91,29 @@ footer.footer .wrapper {
   ul.social-footer {
     display: flex;
 
-    li:not(:last-child) {
+    li.social-footer__item:not(:last-child) {
       margin-right: 35px;
     }
 
-    li {
+    li.social-footer__item {
       display: flex;
       justify-content: center;
       align-items: center;
 
-      a {
-        display: block;
+      a.social-footer__link {
         width: 50px;
         height: 50px;
         border: 1px solid rgba(255, 255, 255, 0.3);
         border-radius: 50%;
         position: relative;
 
+        &:focus,
         &:hover {
           border: 1px solid $links-color;
         }
       }
 
-      .icon {
+      .social-footer__link {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -121,6 +121,7 @@ footer.footer .wrapper {
       }
 
       .insta {
+        &:focus::before,
         &:hover::before {
           background: svg-load(
             "insta.svg",
@@ -148,6 +149,7 @@ footer.footer .wrapper {
       }
 
       .github {
+        &:focus::before,
         &:hover::before {
           background: svg-load(
             "github.svg",
@@ -175,6 +177,7 @@ footer.footer .wrapper {
       }
 
       .vk {
+        &:focus::before,
         &:hover::before {
           background: svg-load(
             "vk.svg",
@@ -202,6 +205,7 @@ footer.footer .wrapper {
       }
 
       .message {
+        &:focus::before,
         &:hover::before {
           background: svg-load(
             "envelope.svg",
@@ -234,7 +238,7 @@ footer.footer .wrapper {
 .quote {
   align-self: flex-end;
 
-  p {
+  p.quote__text {
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -243,7 +247,7 @@ footer.footer .wrapper {
     margin-bottom: 31px;
   }
 
-  span {
+  span.quote__author {
     font-style: italic;
     font-weight: normal;
     font-size: 16px;

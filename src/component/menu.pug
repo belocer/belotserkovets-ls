@@ -1,6 +1,13 @@
 nav.header__nav
   ul.menu
-    - const menu= ['Обо мне', 'Навыки', 'Работы', 'Отзывы']
-      each item in menu
-        li 
-          a(href="#") #{item}
+    li.menu__item
+      a(href="/#about_me").menu__link Обо мне
+
+    li.menu__item
+      a(href="/#skills").menu__link Навыки
+
+    li.menu__item 
+      a(href="/#my-works").menu__link Работы
+
+    li.menu__item 
+      a(href="/#talk-about-me").menu__link Отзывы

@@ -9,7 +9,7 @@ block content
   .main-background 
     .wrapper
       .header
-        a(href="/").header__logo БД
+        a(href="/").logo БД
 
         include ./component/menu.pug
         
@@ -21,13 +21,13 @@ block content
             h1 Денис #[br] Белоцерковец
             span Личный сайт #[br] веб разработчика
 
-          a(href="/#scroll_here").info-scroll
+          a(href="/#about_me").info-scroll
             span.info-scroll__text Скролл
             span.wrap-info-scroll
               span.info-scroll__icon
               span.info-scroll__icon
 
-      section.wrap_cart#scroll_here
+      section.wrap_cart#about_me
         figure.cart-left
           .cart_photo
             +image('content/user.jpg', 'user-pic')
@@ -64,7 +64,7 @@ block content
             | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br] 
             | как тут всё классно и красиво!
 
-    section.useful-you
+    section.useful-you#skills
       .useful-you__head
         h2.useful-you__h2 Чем я могу быть полезен вам
         p.useful-you__p
@@ -111,7 +111,7 @@ block content
                   svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
                     circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
 
-    section.my-works
+    section.my-works#my-works
       .wrapper
         h2.my-works__h2 Мои работы
 
@@ -155,11 +155,11 @@ block content
               | 2 месяца только самых тяжелых #[br]
               | испытаний и бессонных ночей! #[br]
 
-            a(href="#").link-more
+            a(href="#" target="_blank").link-more
               .link-more__icon
               .link-more__text Посмотреть сайт
 
-    section.talk-about-me
+    section.talk-about-me#talk-about-me
       .wrapper
         .wrap-first-line
           h2.talk-about-me__h2 Что обо мне говорят
@@ -215,9 +215,9 @@ block content
           +social("social-footer")
 
         .quote
-          p
+          p.quote__text 
             | Всегда пишите код так, будто сопровождать его будет #[br]
             | склонный к насилию психопат, который знает где вы #[br]
             | живете
           
-          span Martin Golding
+          span.quote__author Martin Golding
