@@ -36,7 +36,7 @@ html(lang="en")
               h1 Денис #[br] Белоцерковец
               span Личный сайт #[br] веб разработчика
 
-            a(href="https://purple-plane.ru/ls/#scroll_here").info-scroll
+            a(href="/#scroll_here").info-scroll
               span.info-scroll__text Скролл
               span.wrap-info-scroll
                 span.info-scroll__icon
@@ -103,7 +103,6 @@ html(lang="en")
                     svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
                       circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
 
-
             .backend
               h3 Back-end
               - const percent2 = 90  
@@ -134,20 +133,29 @@ html(lang="en")
           .my-works__wrap
             .my-works__left-content
               .big-slide
-                +image('mywork1.jpg', 'mywork1.jpg')
+                .big-slide__main-img
+                  +image('mywork1.jpg', 'mywork1.jpg')
 
-                ul.list-slide
-                  - const work= ['mywork1.jpg', 'mywork2.jpg', 'mywork3.jpg', 'mywork4.jpg']
-                    each item in work
-                      li 
-                        +image(item, item)
+                #slide-number 2
+
+                .list-slide                    
+                      button.list-slide__btn.list-slide__btn_active
+                        +image('mywork1.jpg', 'mywork1.jpg')
+
+                      button.list-slide__btn
+                        +image('mywork2.jpg', 'mywork2.jpg')
+
+                      button.list-slide__btn
+                        +image('mywork3.jpg', 'mywork3.jpg')
+
+                      button.list-slide__btn
+                        +image('mywork4.jpg', 'mywork4.jpg')
               
                 .slide-btn
-                  .slide-btn__right
-                  .slide-btn__left
+                  button.slide-btn__right
+                  button.slide-btn__left
 
             .my-works__right-content
-              #slide-number 2
 
               - const scope_tech= ['HTML', 'CSS', 'Javascript', 'PHP']
               ul.scope_tech

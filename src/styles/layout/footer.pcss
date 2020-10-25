@@ -63,7 +63,7 @@ footer.footer .wrapper {
           display: block;
           height: 3px;
           width: 0%;
-          background-color: #586ed3;
+          background-color: $links-color;
           transition: width 0.3s ease-in-out;
         }
 
@@ -96,89 +96,135 @@ footer.footer .wrapper {
     }
 
     li {
-      width: 50px;
-      height: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
 
-      &:hover {
-        border: 1px solid #586ed3;
+      a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        position: relative;
+
+        &:hover {
+          border: 1px solid $links-color;
+        }
       }
 
       .icon {
-        display: inline-block;
-        width: 25px;
-        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
       }
 
       .insta {
-        background: svg-load(
-          "insta.svg",
-          fill=rgba(255, 255, 255, 0.3),
-          width=100%,
-          height=100%
-        );
-
-        &:hover {
+        &:hover::before {
           background: svg-load(
             "insta.svg",
-            fill=#586ED3,
-            width=100%,
-            height=100%
+            fill=$links-color,
+            width=25px,
+            height=25px
           );
+          background-repeat: no-repeat;
+        }
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          background: svg-load(
+            "insta.svg",
+            fill=rgba(255, 255, 255, 0.3),
+            width=25px,
+            height=25px
+          );
+          background-repeat: no-repeat;
+          background-size: center;
         }
       }
 
       .github {
-        background: svg-load(
-          "github.svg",
-          fill=rgba(255, 255, 255, 0.3),
-          width=100%,
-          height=100%
-        );
-
-        &:hover {
+        &:hover::before {
           background: svg-load(
             "github.svg",
-            fill=#586ED3,
-            width=100%,
-            height=100%
+            fill=$links-color,
+            width=25px,
+            height=25px
           );
+          background-repeat: no-repeat;
+        }
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          background: svg-load(
+            "github.svg",
+            fill=rgba(255, 255, 255, 0.3),
+            width=25px,
+            height=25px
+          );
+          background-repeat: no-repeat;
+          background-size: center;
         }
       }
 
       .vk {
-        background: svg-load(
-          "vk.svg",
-          fill=rgba(255, 255, 255, 0.3),
-          width=100%,
-          height=100%
-        );
+        &:hover::before {
+          background: svg-load(
+            "vk.svg",
+            fill=$links-color,
+            width=25px,
+            height=25px
+          );
+          background-repeat: no-repeat;
+        }
 
-        &:hover {
-          background: svg-load("vk.svg", fill=#586ED3, width=100%, height=100%);
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          background: svg-load(
+            "vk.svg",
+            fill=rgba(255, 255, 255, 0.3),
+            width=25px,
+            height=25px
+          );
+          background-repeat: no-repeat;
+          background-size: center;
         }
       }
 
       .message {
-        background: svg-load(
-          "envelope.svg",
-          fill=rgba(255, 255, 255, 0.3),
-          width=100%,
-          height=100%
-        );
-
-        &:hover {
+        &:hover::before {
           background: svg-load(
             "envelope.svg",
-            fill=#586ED3,
-            width=100%,
-            height=100%
+            fill=$links-color,
+            width=25px,
+            height=25px
           );
+          background-repeat: no-repeat;
+        }
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 25px;
+          height: 25px;
+          background: svg-load(
+            "envelope.svg",
+            fill=rgba(255, 255, 255, 0.3),
+            width=25px,
+            height=25px
+          );
+          background-repeat: no-repeat;
+          background-size: center;
         }
       }
     }

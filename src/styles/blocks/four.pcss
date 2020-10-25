@@ -16,20 +16,42 @@ section.my-works {
   .big-slide {
     width: 975px;
     height: 549px;
-    position: relative;
+
+    .big-slide__main-img {
+      position: relative;
+      z-index: 2;
+    }
+
+    #slide-number {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 400px;
+      line-height: 48px;
+      color: #e6e6e6;
+      position: absolute;
+      right: -172px;
+      top: 208px;
+      z-index: 1;
+    }
   }
 }
 
-ul.list-slide {
+.list-slide {
   position: absolute;
   right: 0;
   bottom: 59px;
   display: flex;
+  z-index: 2;
 
-  li {
+  button.list-slide__btn {
+    cursor: pointer;
     display: inline-block;
     width: 183px;
     height: 103px;
+    border: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
 
     img {
       min-width: 100%;
@@ -39,12 +61,8 @@ ul.list-slide {
     }
   }
 
-  li:first-child {
-    border: 2px solid #d0731b;
-  }
-
-  li.active-slide {
-    border: 2px solid #d0731b;
+  .list-slide__btn_active {
+    border: 2px solid $links-color;
   }
 }
 
@@ -55,6 +73,10 @@ ul.list-slide {
 
   .slide-btn__left,
   .slide-btn__right {
+    position: relative;
+    z-index: 20;
+    border: none;
+    outline: none;
     width: 52px;
     height: 52px;
     background: #333c49;
@@ -64,7 +86,7 @@ ul.list-slide {
     cursor: pointer;
 
     &:hover {
-      border: 2px solid #586ed3;
+      border: 2px solid $links-color;
     }
   }
 
@@ -118,18 +140,6 @@ ul.list-slide {
     position: relative;
     z-index: 2;
 
-    #slide-number {
-      font-style: normal;
-      font-weight: 800;
-      font-size: 400px;
-      line-height: 48px;
-      color: #e6e6e6;
-      position: absolute;
-      left: -222px;
-      top: 208px;
-      z-index: 1;
-    }
-
     ul.scope_tech {
       margin-bottom: 35px;
       display: flex;
@@ -167,6 +177,13 @@ ul.list-slide {
       display: flex;
       align-items: center;
       text-decoration: none;
+      transition: none;
+
+      &:hover {
+        transition: none;
+        text-decoration: underline;
+        text-decoration-color: $links-color;
+      }
 
       &__icon {
         display: inline-block;
@@ -175,7 +192,7 @@ ul.list-slide {
         margin-right: 16px;
         background: svg-load(
             "linkseemore.svg",
-            fill=#586ED3,
+            fill=$links-color,
             width=100%,
             height=100%
           )
@@ -186,7 +203,7 @@ ul.list-slide {
         font-weight: bold;
         font-size: 18px;
         line-height: 25px;
-        color: #586ed3;
+        color: $links-color;
       }
     }
   }
