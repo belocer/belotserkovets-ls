@@ -1,5 +1,9 @@
 extends ./layout/main.layout.pug
 include ./mixins.pug
+include ./component/social.pug
+
+block title
+  title Portfolio | main page
 
 block content
   .main-background 
@@ -9,15 +13,7 @@ block content
 
         include ./component/menu.pug
         
-        ul.header__contacts
-          li
-            a(href="https://www.instagram.com/html_css_js_php_developer/" target="_blank").icon.insta.link-class
-          li
-            a(href="https://github.com/belocer" target="_blank").icon.github.link-class
-          li
-            a(href="https://vk.com/html_css_js_php_postgresql" target="_blank").icon.vk.link-class
-          li
-            a(href="mailto:belocerkovecden@gmail.com").icon.message.link-class
+        +social("social-header")
 
       .wrap_relative
         .wrap_center_h1
@@ -69,18 +65,18 @@ block content
             | как тут всё классно и красиво!
 
     section.useful-you
+      .useful-you__head
+        h2.useful-you__h2 Чем я могу быть полезен вам
+        p.useful-you__p
+          | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
+          | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
+          | как тут всё классно и красиво!
+
       .useful-you__container
         .hands-keyboard
           +image('hands.png', 'hands-keyboard')
 
-        .useful-you__content
-          .useful-you__head
-            h2.useful-you__h2 Чем я могу быть полезен вам
-            p.useful-you__p
-              | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
-              | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
-              | как тут всё классно и красиво!
-
+        .wrap_skills
           .frontend
             h3 Front-end
             - const percent1 = 90  
@@ -89,8 +85,8 @@ block content
             ul.frontend__ul
               - for(let i = 1; i < frontend_arr.length+1; i++)
                 li #{frontend_arr[i-1]}
-                  svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
-                    circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
+                  svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
+                    circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
 
           .backend
             h3 Back-end
@@ -101,8 +97,8 @@ block content
             ul.backend__ul
               - for(let i = 1; i < backend_arr.length+1; i++)
                 li #{backend_arr[i-1]}
-                  svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
-                    circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent2-(i * 10))*3} 282.6` fill="none")
+                  svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
+                    circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
 
           .workflow
             h3 Workflow
@@ -112,8 +108,8 @@ block content
             ul.workflow__ul
               - for(let i = 1; i < workflow_arr.length+1; i++)
                 li #{workflow_arr[i-1]}
-                  svg(class="circles" viewBox="8 8 102 102" height="136" width="136")
-                    circle(r="48" cx="50%" cy="50%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent3-(i * 10))*3} 282.6` fill="none")
+                  svg(class="circles" viewBox="-4 -4 120 120" height="136" width="136")
+                    circle(r="55" cx="45%" cy="45%" transform="rotate(-180 55 55)" class="circle__second" style=`transition:all 3s;stroke-dasharray: ${(percent1-(i * 10))*3} 282.6` fill="none")
 
     section.my-works
       .wrapper
@@ -216,15 +212,7 @@ block content
             | Этот сайт я сделал в рамках обучения в #[br]
             | Школе онлайн образования Loftschool
 
-          ul.footer__contacts
-            li
-              a(href="https://www.instagram.com/html_css_js_php_developer/" target="_blank").icon.insta.link-class
-            li
-              a(href="https://github.com/belocer" target="_blank").icon.github.link-class
-            li
-              a(href="https://vk.com/html_css_js_php_postgresql" target="_blank").icon.vk.link-class
-            li
-              a(href="mailto:belocerkovecden@gmail.com").icon.message.link-class
+          +social("social-footer")
 
         .quote
           p

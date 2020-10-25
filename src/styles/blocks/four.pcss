@@ -1,5 +1,5 @@
 section.my-works {
-  background: #fff;
+  background: $text-color;
   margin-bottom: 209px;
 
   h2.my-works__h2 {
@@ -60,10 +60,6 @@ section.my-works {
       max-height: 100%;
     }
   }
-
-  .list-slide__btn_active {
-    border: 2px solid $links-color;
-  }
 }
 
 .slide-btn {
@@ -98,7 +94,7 @@ section.my-works {
       height: 18px;
       background: svg-load(
           "arrow-down.svg",
-          fill=rgba(255, 255, 255, 1),
+          fill=$text-color,
           width=100%,
           height=100%
         )
@@ -207,4 +203,8 @@ section.my-works {
       }
     }
   }
+}
+
+.list-slide__btn_active {
+  border: 2px solid $links-color !important;
 }
