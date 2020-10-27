@@ -2,7 +2,6 @@ section.skills {
   background: url("../images/1800section2.jpg") center center no-repeat
     no-repeat;
   background-size: cover;
-  /*margin-top: 240px;*/
   display: inline-block;
   position: relative;
   display: block;
@@ -16,6 +15,11 @@ section.skills {
     display: inline-block;
     flex: 2.5 4;
     margin-bottom: -50px;
+
+    @include lg-block() {
+      margin-bottom: -40px;
+      align-self: flex-end;
+    }
   }
 }
 
@@ -61,6 +65,10 @@ section.skills {
   width: 100%;
   margin-left: 135px;
 
+  @include lg-block() {
+    margin-left: 0;
+  }
+
   h3.frontend__head,
   h3.backend__head,
   h3.workflow__head {
@@ -102,15 +110,22 @@ ul.workflow__list {
   li:not(:last-child) {
     margin-right: 64px;
   }
+
+  @include lg-block() {
+    li:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
 }
 
-/* По уроку */
+/* По уроку SVG круги */
 .svgli {
   position: relative;
 }
 
 .svgsircle {
   fill: transparent;
+  transition: all 3s;
 }
 
 .under-layer {

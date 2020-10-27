@@ -1,16 +1,16 @@
 $columns: 12;
 $atom: (100% / $columns);
 
-$break_lg: 1799px;
-$break_md: 1199px;
-$break_sm: 767px;
-$break_i5: 319px;
+$break_lg: 1799Px;
+$break_md: 1199Px;
+$break_sm: 767Px;
+$break_i5: 319Px;
 
-$offset: 158px;
-$offset_lg: $offset;
-$offset_md: $offset;
-$offset_sm: $offset;
-$offset_i5: $offset;
+$offset: 158Px;
+$offset_lg: 120Px;
+$offset_md: 120Px;
+$offset_sm: 60Px;
+$offset_i5: 20Px;
 
 $offset_one_side: ($offset / 2);
 $offset_lg_one_side: ($offset_lg / 2);
@@ -18,11 +18,11 @@ $offset_md_one_side: ($offset_md / 2);
 $offset_sm_one_side: ($offset_sm / 2);
 $offset_i5_one_side: ($offset_i5 / 2);
 
-$fields: 158px;
-$fields_lg: 15px;
-$fields_md: 15px;
-$fields_sm: 10px;
-$fields_i5: 7px;
+$fields: 158Px;
+$fields_lg: 60Px;
+$fields_md: 60Px;
+$fields_sm: 30Px;
+$fields_i5: 7Px;
 
 @mixin wrapper-full(){
     padding-left: $fields;
@@ -52,15 +52,55 @@ $fields_i5: 7px;
 @mixin row-offsets(){
     margin-left: ($offset_one_side * -1);
     margin-right: ($offset_one_side * -1);
+
+    @include lg-block(){
+        margin-left: ($offset_lg_one_side * -1);
+        margin-right: ($offset_lg_one_side * -1);
+    }
+
+    @include md-block(){
+        margin-left: ($offset_md_one_side * -1);
+        margin-right: ($offset_md_one_side * -1);
+    }
+
+    @include sm-block(){
+        margin-left: ($offset_sm_one_side * -1);
+        margin-right: ($offset_sm_one_side * -1);
+    }
+
+    @include i5-block(){
+        margin-left: ($offset_i5_one_side * -1);
+        margin-right: ($offset_i5_one_side * -1);
+    }
 }
 
 @mixin col-offsets($type){
     #{$type}-left: $offset_one_side;
     #{$type}-right: $offset_one_side;
+
+    @include lg-block(){
+        #{$type}-left: $offset_lg_one_side;
+        #{$type}-right: $offset_lg_one_side;
+    }
+
+    @include md-block(){
+        #{$type}-left: $offset_md_one_side;
+        #{$type}-right: $offset_md_one_side;
+    }
+
+    @include sm-block(){
+        #{$type}-left: $offset_sm_one_side;
+        #{$type}-right: $offset_sm_one_side;
+    }
+
+    @include i5-block(){
+        #{$type}-left: $offset_i5_one_side;
+        #{$type}-right: $offset_i5_one_side;
+    }
 }
 
 @mixin wrapper(){
-    max-width: 1799px;
+    max-width: 1799Px;
     margin: 0 auto;
     @include wrapper-full();
 }
@@ -434,6 +474,10 @@ $fields_i5: 7px;
             > div{
                 @include col();
                 @include size(1);
+                @include size-lg(1);
+                @include size-md(1);
+                @include size-sm(1);
+                @include size-i5(1);
                 height: inherit;
                 outline: $outline;
                 background: $background;

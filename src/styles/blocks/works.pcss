@@ -28,6 +28,11 @@ section.works {
     right: -170px;
     top: 212px;
     z-index: -1;
+    @include lg-block() {
+      font-size: 300px;
+      right: -135px;
+      top: 150px;
+    }
   }
 }
 
@@ -48,6 +53,11 @@ section.works {
     outline: none;
     padding: 0;
 
+    @include lg-block() {
+      width: 120px;
+      height: 67px;
+    }
+
     img {
       min-width: 100%;
       max-width: 100%;
@@ -62,6 +72,10 @@ section.works {
   right: -52px;
   bottom: 58px;
 
+  @include lg-block() {
+    right: -34px;
+  }
+
   .slider__switch-left,
   .slider__switch-right {
     position: relative;
@@ -75,6 +89,11 @@ section.works {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    @include lg-block() {
+      width: 34px;
+      height: 34px;
+    }
   }
 
   .slider__switch-right {
@@ -90,6 +109,10 @@ section.works {
           height=100%
         )
         no-repeat;
+      @include lg-block() {
+        width: 11px;
+        height: 11px;
+      }
     }
 
     &:focus::before,
@@ -118,6 +141,10 @@ section.works {
           height=100%
         )
         no-repeat;
+      @include lg-block() {
+        width: 11px;
+        height: 11px;
+      }
     }
 
     &:focus::after,
@@ -144,6 +171,10 @@ section.works {
     .slider__main-img {
       position: relative;
       max-width: 975px;
+
+      @include lg-block() {
+        max-width: 637px;
+      }
     }
   }
 
@@ -156,6 +187,9 @@ section.works {
       margin-bottom: 35px;
       display: flex;
       flex-wrap: wrap;
+      @include lg-block() {
+        margin-bottom: 10px;
+      }
 
       li.scope-tech__item {
         padding: 14px 22px;
@@ -174,6 +208,10 @@ section.works {
       line-height: 41px;
       margin-bottom: 35px;
       color: #333c49;
+      @include lg-block() {
+        line-height: 35px;
+        margin-bottom: 20px;
+      }
     }
 
     p.slider-description__text {
@@ -183,6 +221,9 @@ section.works {
       line-height: 30px;
       color: rgba(51, 60, 73, 0.8);
       margin-bottom: 46px;
+      @include lg-block() {
+        margin-bottom: 2px;
+      }
     }
 
     .link-more {
