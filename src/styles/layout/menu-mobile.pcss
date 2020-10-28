@@ -1,0 +1,224 @@
+button#menu-mobile__show-btn {
+  display: none;
+  order: 20;
+  width: 29.6px;
+  height: 24.67px;
+  border: none;
+  outline: none;
+  background: svg-load(
+      "sandwich.svg",
+      fill=rgba(255, 255, 255, 1),
+      width=100%,
+      height=100%
+    )
+    center center no-repeat no-repeat;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    background: svg-load("sandwich.svg", fill=#FF9D00, width=100%, height=100%)
+      center center no-repeat no-repeat;
+  }
+
+  @include md-block() {
+    display: inline-block;
+  }
+}
+
+#menu-mobile {
+  padding: 50px;
+  position: fixed;
+  background: #fff;
+  width: 45%;
+  min-width: 345px;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: none;
+
+  #cross {
+    display: block;
+    margin: 17px -8px auto auto;
+    width: 20px;
+    height: 20px;
+    z-index: 110;
+    background: svg-load(
+        "cross.svg",
+        fill=rgba(#414c63, 1),
+        width=100%,
+        height=100%
+      )
+      center center no-repeat no-repeat;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      transform: rotate(180deg);
+      background: svg-load("cross.svg", fill=#FF9D00, width=100%, height=100%)
+        center center no-repeat no-repeat;
+    }
+  }
+
+  nav.menu-mobile__container {
+    display: block;
+    position: relative;
+    z-index: 105;
+    margin-top: 80%;
+
+    @include md-block() {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include md-block() {
+      margin-top: 40%;
+    }
+
+    ul.menu.menu-mobile__wrap {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @include md-block() {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 23px;
+
+        a {
+          display: inline-block;
+          color: $text-color;
+          text-decoration: none;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          position: relative;
+
+          @include md-block() {
+            color: #414c63;
+            font-weight: 600;
+          }
+
+          &::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 0%;
+            background-color: $links-color;
+            transition: width 0.3s ease-in-out;
+            margin-top: 3px;
+          }
+
+          &:hover::after,
+          &:focus::after {
+            width: 100%;
+          }
+
+          &:hover,
+          &:focus {
+            color: $links-color;
+          }
+        }
+      }
+    }
+  }
+
+  .social-mobile {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 110;
+    margin-top: 98px;
+
+    li.social-mobile__item {
+      .social-mobile__link {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+      }
+
+      .insta {
+        background: svg-load(
+          "insta.svg",
+          fill=rgba(#414c63, 1),
+          width=100%,
+          height=100%
+        );
+
+        &:focus,
+        &:hover {
+          background: svg-load(
+            "insta.svg",
+            fill=#FF9D00,
+            width=100%,
+            height=100%
+          );
+        }
+      }
+
+      .github {
+        background: svg-load(
+          "github.svg",
+          fill=rgba(#414c63, 1),
+          width=100%,
+          height=100%
+        );
+
+        &:focus,
+        &:hover {
+          background: svg-load(
+            "github.svg",
+            fill=#FF9D00,
+            width=100%,
+            height=100%
+          );
+        }
+      }
+
+      .vk {
+        background: svg-load(
+          "vk.svg",
+          fill=rgba(#414c63, 1),
+          width=100%,
+          height=100%
+        );
+
+        &:focus,
+        &:hover {
+          background: svg-load("vk.svg", fill=#FF9D00, width=100%, height=100%);
+        }
+      }
+
+      .message {
+        background: svg-load(
+          "envelope.svg",
+          fill=rgba(#414c63, 1),
+          width=100%,
+          height=100%
+        );
+
+        &:focus,
+        &:hover {
+          background: svg-load(
+            "envelope.svg",
+            fill=#FF9D00,
+            width=100%,
+            height=100%
+          );
+        }
+      }
+    }
+  }
+}
