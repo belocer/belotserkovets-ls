@@ -1,6 +1,6 @@
 mixin menu(position)
-  nav.header__nav
-    ul.menu
+  nav(class=`${position}__container`).header__nav
+    ul(class=`${position}__wrap`).menu
       li.menu__item
         a(href="/#about_me" class=`${position}`).menu__link Обо&nbsp;мне
 

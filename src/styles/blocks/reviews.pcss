@@ -6,8 +6,11 @@ section.reviews {
   background-size: 100vw 694px;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   max-width: 100%;
+
+  @include sm-block() {
+    background-size: cover;
+  }
 }
 
 .reviews__head {
@@ -22,6 +25,11 @@ section.reviews {
   @include md-block() {
     margin-bottom: 54px;
   }
+  @include sm-block() {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0;
+  }
 
   h2.reviews__header {
     margin-top: 143px;
@@ -29,13 +37,22 @@ section.reviews {
     font-weight: bold;
     font-size: 36px;
     line-height: 49px;
-    color: #ffffff;
+    color: #fff;
     margin-right: 116px;
 
     @include md-block() {
       font-size: 30px;
       margin-right: 30px;
       margin-top: 120px;
+    }
+
+    @include sm-block() {
+      font-size: 24px;
+      line-height: 33px;
+      margin-top: 70px;
+      margin-right: 0;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -46,6 +63,9 @@ section.reviews {
 
     @include md-block() {
       margin-top: 115px;
+    }
+    @include sm-block() {
+      margin-top: 20px;
     }
 
     .reviews__left-btn,
@@ -117,10 +137,12 @@ section.reviews {
 .slides {
   display: flex;
   overflow: hidden;
-  margin-bottom: 200px;
+  padding-bottom: 200px;
+  margin-bottom: 0;
 
   @include md-block() {
-    margin-bottom: 140px;
+    padding-bottom: 140px;
+    margin-bottom: 0;
   }
 
   .slide {
@@ -132,6 +154,11 @@ section.reviews {
     @include md-block() {
       justify-content: space-between;
       margin-left: 100px;
+    }
+
+    @include sm-block() {
+      margin-left: 0;
+      min-width: 100%;
     }
 
     p.slide-text {
@@ -168,6 +195,10 @@ section.reviews {
           height: 37px;
           left: -55px;
         }
+
+        @include sm-block() {
+          display: none;
+        }
       }
     }
 
@@ -176,6 +207,11 @@ section.reviews {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 300px;
+
+      @include md-block() {
+        margin-top: 20px;
+      }
 
       &__description {
         display: flex;
@@ -185,6 +221,10 @@ section.reviews {
       &__photo {
         height: 75px;
         width: 75px;
+
+        @include md-block() {
+          margin-right: 7px;
+        }
       }
 
       &__name {
@@ -198,6 +238,9 @@ section.reviews {
 
         @include md-block() {
           font-size: 16px;
+        }
+        @include md-block() {
+          margin-bottom: 3px;
         }
       }
 

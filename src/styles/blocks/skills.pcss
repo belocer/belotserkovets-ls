@@ -31,6 +31,12 @@ section.skills {
       max-width: 100%;
       margin-top: -110px;
     }
+
+    @include sm-block() {
+      margin-bottom: -40px;
+      max-width: 244px;
+      margin-top: -60px;
+    }
   }
 }
 
@@ -66,6 +72,15 @@ section.skills {
     @include md-block() {
       text-align: center;
     }
+
+    @include sm-block() {
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 24px;
+    }
   }
 
   p.skills__description {
@@ -81,6 +96,14 @@ section.skills {
       text-align: center;
       font-size: 14px;
       width: 100%;
+    }
+
+    @include sm-block() {
+      text-align: left;
+      padding-left: 30px;
+      padding-right: 30px;
+      font-size: 14px;
+      line-height: 24px;
     }
   }
 }
@@ -196,11 +219,20 @@ ul.workflow__list {
   font-weight: bold;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.5);
+
+  @include sm-block() {
+    font-size: 14px;
+  }
 }
 
 .svgls {
   @include md-block() {
     height: 200px;
     width: 200px;
+  }
+
+  @include sm-block() {
+    height: 115px;
+    width: 115px;
   }
 }

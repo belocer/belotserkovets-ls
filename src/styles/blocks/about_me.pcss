@@ -7,10 +7,20 @@
   padding: 60px auto 0;
   position: relative;
   z-index: 2;
+
+  @include sm-block() {
+    flex-wrap: wrap;
+  }
 }
 
 figure.cart-left {
   margin: 0;
+
+  @include sm-block() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   .cart-photo {
     width: 200px;
@@ -19,6 +29,11 @@ figure.cart-left {
     overflow: hidden;
     margin: 0 !important;
     padding: 0 !important;
+
+    @include sm-block() {
+      width: 170px;
+      height: 170px;
+    }
 
     img.cart-photo__img {
       max-width: 100%;
@@ -34,6 +49,11 @@ figure.cart-left {
     @include md-block() {
       margin-top: 21px;
       margin-left: 0;
+    }
+
+    @include md-block() {
+      justify-content: space-between;
+      width: 100%;
     }
   }
 }
@@ -67,8 +87,6 @@ figure.cart-left {
   ul.val {
     li {
       color: $text-color;
-      font-family: Open Sans;
-      font-style: normal;
       font-weight: 600;
       font-size: 16px;
       line-height: 22px;
@@ -89,8 +107,12 @@ figure.cart-left {
     margin-left: 100px;
   }
 
+  @include sm-block() {
+    margin-top: 45px;
+    margin-left: 0;
+  }
+
   header.cart-description__head {
-    font-style: normal;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
@@ -101,10 +123,13 @@ figure.cart-left {
       font-size: 14px;
       margin-bottom: 11px;
     }
+
+    @include sm-block() {
+      margin-bottom: 5px;
+    }
   }
 
   h2.cart-description__first-last-name {
-    font-style: normal;
     font-weight: bold;
     font-size: 36px;
     line-height: 49px;
@@ -114,6 +139,12 @@ figure.cart-left {
     @include md-block() {
       font-size: 30px;
       margin-bottom: 25px;
+    }
+
+    @include sm-block() {
+      font-size: 30px;
+      line-height: 36px;
+      margin-bottom: 38px;
     }
   }
 
@@ -129,6 +160,11 @@ figure.cart-left {
       font-size: 14px;
       margin-bottom: 45px;
     }
+
+    @include sm-block() {
+      line-height: 24px;
+      margin-bottom: 70px;
+    }
   }
 
   em.cart-description__text {
@@ -138,6 +174,11 @@ figure.cart-left {
     line-height: 30px;
     color: rgba(255, 255, 255, 0.7);
     position: relative;
+
+    @include sm-block() {
+      font-size: 14px;
+      line-height: 24px;
+    }
 
     &::before {
       content: "";
@@ -156,6 +197,12 @@ figure.cart-left {
 
       @include md-block() {
         left: -40px;
+      }
+
+      @include sm-block() {
+        width: 10px;
+        height: 10px;
+        left: -18px;
       }
     }
   }

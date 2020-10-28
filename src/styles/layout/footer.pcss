@@ -32,6 +32,11 @@ footer.footer .wrapper {
     max-width: 200px;
   }
 
+  @include sm-block() {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
   .year {
     font-style: normal;
     font-weight: 600;
@@ -41,9 +46,19 @@ footer.footer .wrapper {
     transform: translateY(20px);
     margin-right: 56px;
     margin-bottom: 24px;
+
+    @include sm-block() {
+      max-width: 100%;
+      margin-right: 0;
+    }
   }
 
   .data-user {
+    @include sm-block() {
+      max-width: 100%;
+      margin-right: 0;
+    }
+
     .name {
       font-style: normal;
       font-weight: bold;
@@ -60,6 +75,11 @@ footer.footer .wrapper {
       font-size: 16px;
       line-height: 30px;
       color: rgba(255, 255, 255, 0.3);
+
+      @include sm-block() {
+        font-size: 14px;
+        margin-bottom: 45px;
+      }
     }
   }
 }
@@ -113,6 +133,10 @@ footer.footer .wrapper {
 
     @include md-block() {
       margin-bottom: 20px;
+    }
+
+    @include sm-block() {
+      font-size: 14px;
     }
   }
 
@@ -252,15 +276,20 @@ footer.footer .wrapper {
 
 .quote {
   align-self: flex-end;
+  margin-left: 65px;
 
-  @include lg-block() {
+  @include md-block() {
     margin-left: -63px;
   }
 
   @include md-block() {
     width: 100%;
-    max-width: width 442px;
+    /*max-width: 442px;*/
     margin-top: 50px;
+  }
+
+  @include sm-block() {
+    margin-left: 0;
   }
 
   p.quote__text {
@@ -278,6 +307,11 @@ footer.footer .wrapper {
     @include md-block() {
       margin-left: 350px;
     }
+
+    @include sm-block() {
+      margin-left: 0;
+      margin-bottom: 30px;
+    }
   }
 
   span.quote__author {
@@ -290,6 +324,10 @@ footer.footer .wrapper {
     @include md-block() {
       margin-left: 350px;
     }
+
+    @include sm-block() {
+      margin-left: 0;
+    }
   }
 }
 
@@ -301,4 +339,40 @@ nav.header__nav ul.menu li a.menu-footer {
     content: "";
     display: none;
   }
+}
+
+.menu-footer__wrap {
+  @include sm-block() {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .menu__item {
+    @include sm-block() {
+      margin-right: 0 !important;
+      width: 50%;
+      justify-content: flex-start !important;
+    }
+  }
+}
+
+/* Социалки в footer */
+.social-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-footer__item {
+  @include sm-block() {
+    margin-right: 0 !important;
+  }
+}
+
+.social-footer__link {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

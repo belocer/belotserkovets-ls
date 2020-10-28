@@ -22,7 +22,7 @@ section.main-background {
   }
 
   @media (max-width: 1485px) {
-    background-size: auto;
+    background-size: cover;
   }
 }
 
@@ -70,9 +70,15 @@ section.main-background {
     font-size: 72px;
     line-height: 75px;
     color: $text-color;
+
     @include md-block() {
       text-align: center;
       order: 5;
+    }
+
+    @include sm-block() {
+      font-size: 36px;
+      line-height: 48px;
     }
   }
 
@@ -93,6 +99,11 @@ section.main-background {
       display: block;
       order: 1;
       margin-bottom: 24px;
+    }
+
+    @include sm-block() {
+      font-size: 14px;
+      line-height: 19px;
     }
   }
 }

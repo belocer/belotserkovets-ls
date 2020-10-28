@@ -15,6 +15,11 @@ section.works {
     line-height: 49px;
     text-align: left;
     color: #333c49;
+
+    @include sm-block() {
+      margin-top: 91px;
+      margin-bottom: 24px;
+    }
   }
 
   .works__main-img {
@@ -46,6 +51,10 @@ section.works {
       bottom: 116px;
       line-height: 0;
     }
+
+    @include sm-block() {
+      display: none;
+    }
   }
 }
 
@@ -55,6 +64,10 @@ section.works {
   bottom: 59px;
   display: flex;
   z-index: 2;
+
+  @include sm-block() {
+    display: none;
+  }
 
   button.slider__btn {
     cursor: pointer;
@@ -89,6 +102,11 @@ section.works {
     right: -34px;
   }
 
+  @include sm-block() {
+    right: 0;
+    bottom: 5px;
+  }
+
   .slider__switch-left,
   .slider__switch-right {
     position: relative;
@@ -106,6 +124,11 @@ section.works {
     @include lg-block() {
       width: 34px;
       height: 34px;
+    }
+
+    @include sm-block() {
+      width: 55px;
+      height: 55px;
     }
   }
 
@@ -180,6 +203,11 @@ section.works {
     flex-wrap: wrap;
   }
 
+  @include sm-block() {
+    margin-right: -30px;
+    margin-left: -30px;
+  }
+
   .slider {
     flex: 3 10 77%;
     position: relative;
@@ -201,6 +229,9 @@ section.works {
       @include md-block() {
         max-width: 100%;
       }
+      @include sm-block() {
+        margin-right: 0;
+      }
     }
   }
 
@@ -216,6 +247,11 @@ section.works {
     @include md-block() {
       flex: 1 1 100%;
       text-align: center;
+    }
+
+    @include sm-block() {
+      flex: 1 1 100%;
+      text-align: left;
     }
 
     ul.scope-tech {
@@ -257,6 +293,12 @@ section.works {
       @include md-block() {
         margin-bottom: 12px;
       }
+      @include sm-block() {
+        margin-right: 30px;
+        margin-left: 30px;
+        font-size: 24px;
+        line-height: 30px;
+      }
     }
 
     p.slider-description__text {
@@ -274,6 +316,12 @@ section.works {
         max-width: 422px;
         margin: 0 auto 46px;
       }
+      @include sm-block() {
+        margin-right: 30px;
+        margin-left: 30px;
+        font-size: 14px;
+        line-height: 24px;
+      }
     }
 
     .link-more {
@@ -287,6 +335,11 @@ section.works {
         display: flex;
         width: 100%;
         justify-content: center;
+      }
+
+      @include sm-block() {
+        justify-content: flex-start;
+        margin-left: 30px;
       }
 
       &:focus,
