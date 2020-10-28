@@ -10,6 +10,28 @@ footer.footer .wrapper {
   justify-content: space-between;
   align-items: baseline;
 
+  @include md-block() {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+.wrap-year-user {
+  display: flex;
+  justify-content: space-between;
+  width: 590px;
+  margin-right: 135px;
+  align-items: baseline;
+
+  @include lg-block() {
+    flex-wrap: wrap;
+    margin-right: 90px;
+  }
+
+  @include md-block() {
+    max-width: 200px;
+  }
+
   .year {
     font-style: normal;
     font-weight: 600;
@@ -17,6 +39,8 @@ footer.footer .wrapper {
     line-height: 65px;
     color: rgba(255, 255, 255, 0.3);
     transform: translateY(20px);
+    margin-right: 56px;
+    margin-bottom: 24px;
   }
 
   .data-user {
@@ -86,6 +110,10 @@ footer.footer .wrapper {
     line-height: 30px;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 40px;
+
+    @include md-block() {
+      margin-bottom: 20px;
+    }
   }
 
   ul.social-footer {
@@ -225,6 +253,16 @@ footer.footer .wrapper {
 .quote {
   align-self: flex-end;
 
+  @include lg-block() {
+    margin-left: -63px;
+  }
+
+  @include md-block() {
+    width: 100%;
+    max-width: width 442px;
+    margin-top: 50px;
+  }
+
   p.quote__text {
     font-style: normal;
     font-weight: normal;
@@ -232,6 +270,14 @@ footer.footer .wrapper {
     line-height: 30px;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 31px;
+
+    @include lg-block() {
+      margin-bottom: 20px;
+    }
+
+    @include md-block() {
+      margin-left: 350px;
+    }
   }
 
   span.quote__author {
@@ -240,6 +286,10 @@ footer.footer .wrapper {
     font-size: 16px;
     line-height: 22px;
     color: #ffffff;
+
+    @include md-block() {
+      margin-left: 350px;
+    }
   }
 }
 

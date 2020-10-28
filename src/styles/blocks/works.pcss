@@ -2,6 +2,10 @@ section.works {
   background: $text-color;
   margin-bottom: 209px;
 
+  @include md-block() {
+    margin-bottom: 115px;
+  }
+
   h2.works__headers {
     margin-top: 192px;
     margin-bottom: 83px;
@@ -28,10 +32,19 @@ section.works {
     right: -170px;
     top: 212px;
     z-index: -1;
+
     @include lg-block() {
       font-size: 300px;
       right: -135px;
       top: 150px;
+    }
+
+    @include md-block() {
+      font-size: 300px;
+      right: -135px;
+      top: auto;
+      bottom: 116px;
+      line-height: 0;
     }
   }
 }
@@ -163,32 +176,60 @@ section.works {
 .works__wrap {
   display: flex;
 
+  @include md-block() {
+    flex-wrap: wrap;
+  }
+
   .slider {
-    flex: 3 4 1133px;
+    flex: 3 10 77%;
     position: relative;
     z-index: 30;
+
+    @include md-block() {
+      flex: 1 1 100%;
+      margin-bottom: 60px;
+    }
 
     .slider__main-img {
       position: relative;
       max-width: 975px;
+      margin-right: 145px;
 
       @include lg-block() {
         max-width: 637px;
+      }
+      @include md-block() {
+        max-width: 100%;
       }
     }
   }
 
   .works__slider-description {
-    flex: 2 1 350px;
+    flex: 2 1 23%;
     position: relative;
-    z-index: 2;
+    z-index: 30;
+
+    @include lg-block() {
+      flex: 2 1 27%;
+    }
+
+    @include md-block() {
+      flex: 1 1 100%;
+      text-align: center;
+    }
 
     ul.scope-tech {
       margin-bottom: 35px;
       display: flex;
       flex-wrap: wrap;
+
       @include lg-block() {
         margin-bottom: 10px;
+      }
+
+      @include md-block() {
+        justify-content: center;
+        margin-bottom: 20px;
       }
 
       li.scope-tech__item {
@@ -208,9 +249,13 @@ section.works {
       line-height: 41px;
       margin-bottom: 35px;
       color: #333c49;
+
       @include lg-block() {
         line-height: 35px;
         margin-bottom: 20px;
+      }
+      @include md-block() {
+        margin-bottom: 12px;
       }
     }
 
@@ -221,8 +266,13 @@ section.works {
       line-height: 30px;
       color: rgba(51, 60, 73, 0.8);
       margin-bottom: 46px;
+
       @include lg-block() {
         margin-bottom: 2px;
+      }
+      @include md-block() {
+        max-width: 422px;
+        margin: 0 auto 46px;
       }
     }
 
@@ -232,6 +282,12 @@ section.works {
       text-decoration: none;
       transition: none;
       color: #586ed3;
+
+      @include md-block() {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
 
       &:focus,
       &:hover {
