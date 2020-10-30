@@ -2,11 +2,11 @@ const smartgrid = require('smart-grid');
 const settings = {
   outputStyle: 'scss',
   columns: 12,
-  offset: '158Px',
+  offset: '160Px',
   mobileFirst: false,
   container: {
     maxWidth: '1800Px',
-    fields: '158Px'
+    fields: '160Px'
   },
   breakPoints: {
     lg: {
