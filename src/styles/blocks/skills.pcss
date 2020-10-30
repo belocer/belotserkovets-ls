@@ -5,6 +5,8 @@ section.skills {
   display: inline-block;
   position: relative;
   display: block;
+  padding-top: 144px;
+  padding-bottom: 144px;
   @include md-block() {
     overflow: hidden;
   }
@@ -21,26 +23,26 @@ section.skills {
   .hands-keyboard {
     display: inline-block;
     flex: 2.5 4;
-    margin-bottom: -50px;
+    margin-bottom: -144px;
+    transform: translate(0 50px);
 
     @include md-block() {
-      margin-bottom: -89px;
       align-self: center;
       order: 5;
-      transform: rotate(-45deg);
+      transform: rotate(-45deg) translate(0 70px);
       max-width: 100%;
-      margin-top: -110px;
+      margin-top: -120px;
     }
 
     @include sm-block() {
-      margin-bottom: -40px;
+      margin-top: -30px;
       max-width: 244px;
-      margin-top: -60px;
+      transform: rotate(-45deg) translate(0 -70px);
     }
   }
 }
 
-.wrap_skills {
+.wrap-skills {
   position: relative;
   z-index: 10;
   display: flex;
@@ -56,8 +58,7 @@ section.skills {
 }
 
 .skills__head {
-  margin: 0 auto;
-  padding-top: 144px;
+  margin: 0 auto 79px;
   max-width: 601px;
 
   h2.skills__header {
@@ -90,7 +91,7 @@ section.skills {
     font-size: 16px;
     color: rgba(255, 255, 255, 0.8);
     text-align: left;
-    margin: 0 auto 79px;
+    margin: 0 auto;
 
     @include md-block() {
       text-align: center;
@@ -108,11 +109,10 @@ section.skills {
   }
 }
 
-.frontend,
-.backend,
-.workflow {
+.skills-block {
   width: 100%;
   margin-left: 135px;
+  padding-bottom: 55px;
 
   @include lg-block() {
     margin-left: 0;
@@ -122,9 +122,7 @@ section.skills {
     text-align: center;
   }
 
-  h3.frontend__head,
-  h3.backend__head,
-  h3.workflow__head {
+  h3.skills-block__head {
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -138,12 +136,9 @@ section.skills {
   }
 }
 
-ul.frontend__list,
-ul.backend__list,
-ul.workflow__list {
+ul.skills-block__list {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 55px;
 
   @include md-block() {
     justify-content: space-around;
