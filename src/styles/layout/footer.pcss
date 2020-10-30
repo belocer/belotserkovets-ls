@@ -56,9 +56,16 @@ footer.footer .wrapper {
   }
 
   .data-user {
+    max-width: 150px;
+
+    @include md-block() {
+      padding-bottom: 20px;
+    }
+
     @include sm-block() {
       max-width: 100%;
       margin-right: 0;
+      padding-bottom: 0;
     }
 
     .name {
@@ -88,6 +95,10 @@ footer.footer .wrapper {
 
 .menu-link {
   flex: 3 1 350px;
+
+  @include sm-block() {
+    max-width: 100%;
+  }
 
   menu.menu {
     display: flex;
@@ -142,6 +153,7 @@ footer.footer .wrapper {
 
     @include sm-block() {
       font-size: 14px;
+      max-width: 100%;
     }
   }
 
@@ -329,12 +341,15 @@ footer.footer .wrapper {
     @include md-block() {
       margin-left: 0;
       margin-top: 0;
+      max-width: 440px;
+      width: 440px;
     }
 
     @include sm-block() {
       margin-left: 0;
-
       margin-bottom: 30px;
+      max-width: 100%;
+      width: 440px;
     }
   }
 

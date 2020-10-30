@@ -32,8 +32,7 @@
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0 auto;
 
     @include sm-block() {
       width: 170px;
@@ -46,7 +45,7 @@
   }
 
   .cart-photo__description {
-    margin-left: -100px;
+    /*margin-left: -100px;*/
     margin-top: 78px;
     display: flex;
     justify-content: center;
@@ -106,12 +105,14 @@
 }
 
 .cart-description {
+  max-width: 57%;
   @include md-block() {
     margin-left: 100px;
   }
 
   @include sm-block() {
     margin: 45px auto 0;
+    max-width: 100%;
   }
 
   header.cart-description__head {
@@ -202,9 +203,7 @@
       }
 
       @include sm-block() {
-        width: 10px;
-        height: 10px;
-        left: -18px;
+        left: -25px;
       }
     }
   }

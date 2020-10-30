@@ -1,5 +1,5 @@
-@import "./mixins.pcss";
 @import "./smart-grid.pcss";
+@import "./mixins.pcss";
 @import "./layout/base.pcss";
 @import "./layout/header.pcss";
 @import "./blocks/*.pcss";
@@ -31,3 +31,10 @@ a:active,
 a:hover {
   outline: 0;
 }
+
+.debug {
+  /* @include debug(#755fac, 1px solid #4affff); */
+}
+/* .debug {
+  .debug(rgba(118, 112, 137, 0.24), 1px solid rgba(157, 153, 250, 0.33));
+} */

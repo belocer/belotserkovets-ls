@@ -49,7 +49,7 @@ section.works {
       font-size: 300px;
       right: -135px;
       top: auto;
-      bottom: 116px;
+      bottom: 50%;
       line-height: 0;
     }
 
@@ -219,6 +219,13 @@ ul.slider__list {
     @include md-block() {
       flex: 1 1 100%;
       margin-bottom: 60px;
+      margin-right: -23px;
+      margin-left: -23px;
+    }
+
+    @include sm-block() {
+      margin-right: -7px;
+      margin-left: -7px;
     }
 
     .slider__main-img {
