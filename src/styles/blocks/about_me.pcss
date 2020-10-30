@@ -18,6 +18,10 @@
   margin: 0;
 
   @include sm-block() {
+    margin: 0 auto;
+  }
+
+  @include sm-block() {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -107,8 +111,7 @@
   }
 
   @include sm-block() {
-    margin-top: 45px;
-    margin-left: 0;
+    margin: 45px auto 0;
   }
 
   header.cart-description__head {
