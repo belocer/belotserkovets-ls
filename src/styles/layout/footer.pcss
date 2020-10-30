@@ -1,16 +1,16 @@
 footer.footer {
   background: #222427;
   margin-top: -2px;
+  padding-top: 76px;
+  padding-bottom: 76px;
 }
 
 footer.footer .wrapper {
-  padding-top: 76px;
-  padding-bottom: 76px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 
-  @include md-block() {
+  @include lg-block() {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
@@ -20,8 +20,10 @@ footer.footer .wrapper {
   display: flex;
   justify-content: space-between;
   width: 590px;
-  margin-right: 135px;
+  margin-right: 65px;
   align-items: baseline;
+  max-width: 410px;
+  flex: 1 4 410px;
 
   @include lg-block() {
     flex-wrap: wrap;
@@ -33,7 +35,7 @@ footer.footer .wrapper {
   }
 
   @include sm-block() {
-    max-width: 100%;
+    max-width: 50%;
     margin-right: 0;
   }
 
@@ -44,7 +46,7 @@ footer.footer .wrapper {
     line-height: 65px;
     color: rgba(255, 255, 255, 0.3);
     transform: translateY(20px);
-    margin-right: 56px;
+    margin-right: 50px;
     margin-bottom: 24px;
 
     @include sm-block() {
@@ -85,6 +87,8 @@ footer.footer .wrapper {
 }
 
 .menu-link {
+  flex: 3 1 350px;
+
   menu.menu {
     display: flex;
     margin-bottom: 47px;
@@ -125,11 +129,12 @@ footer.footer .wrapper {
 
   p.description {
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 16px;
     line-height: 30px;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 40px;
+    max-width: 315px;
 
     @include md-block() {
       margin-bottom: 20px;
@@ -275,54 +280,73 @@ footer.footer .wrapper {
 }
 
 .quote {
+  flex: 5 3;
   align-self: flex-end;
-  margin-left: 65px;
+  margin-left: 0;
+  max-width: 350px;
+  min-width: 350px;
+
+  @media screen and (max-width: 1369px) {
+    min-width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
 
   @include md-block() {
-    margin-left: -63px;
+    max-width: 270px;
   }
 
   @include md-block() {
     width: 100%;
-    /*max-width: 442px;*/
+    align-items: flex-start;
     margin-top: 50px;
   }
 
   @include sm-block() {
     margin-left: 0;
+    align-items: flex-start;
   }
 
   p.quote__text {
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 16px;
     line-height: 30px;
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 31px;
+    max-width: 350px;
 
     @include lg-block() {
       margin-bottom: 20px;
     }
 
+    @media screen and (max-width: 1369px) {
+      margin-top: 50px;
+      max-width: 50%;
+    }
+
     @include md-block() {
-      margin-left: 350px;
+      margin-left: 0;
+      margin-top: 0;
     }
 
     @include sm-block() {
       margin-left: 0;
+
       margin-bottom: 30px;
     }
   }
 
   span.quote__author {
     font-style: italic;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 16px;
     line-height: 22px;
     color: #ffffff;
+    max-width: 350px;
 
     @include md-block() {
-      margin-left: 350px;
     }
 
     @include sm-block() {
@@ -342,16 +366,25 @@ nav.header__nav ul.menu li a.menu-footer {
 }
 
 .menu-footer__wrap {
+  width: 400px;
+  justify-content: space-between !important;
   @include sm-block() {
-    justify-content: space-between;
     flex-wrap: wrap;
   }
 
   .menu__item {
+    &:not(:last-child) {
+      margin-right: 0 !important;
+    }
+
     @include sm-block() {
       margin-right: 0 !important;
       width: 50%;
       justify-content: flex-start !important;
+    }
+
+    a {
+      font-weight: 300;
     }
   }
 }
@@ -360,10 +393,12 @@ nav.header__nav ul.menu li a.menu-footer {
 .social-footer {
   display: flex;
   justify-content: space-between;
-  max-width: 305px;
+  max-width: 263px;
 }
 
 .social-footer__item {
+  margin-right: 0 !important;
+
   @include sm-block() {
     margin-right: 0 !important;
   }
@@ -380,5 +415,13 @@ nav.header__nav ul.menu li a.menu-footer {
   &:focus,
   &:hover {
     border: 1px solid $links-color;
+  }
+}
+
+.menu-footer__container {
+  max-width: 400px;
+
+  @include md-block() {
+    display: block !important;
   }
 }
