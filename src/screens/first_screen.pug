@@ -1,31 +1,30 @@
-section.main-background.first-screen
+.main-background.first-screen
   .wrapper
-    .header
-      a(href="/").logo БД
+    .fullscreen-section.flex-column
+      .header
+        a(href="/").logo БД
 
-      +menu("menu-header")
-      +social("social-header")
+        +menu("menu-header")
+        +social("social-header")
 
-      button(type="button")#menu-mobile__show-btn
+        button(type="button")#menu-mobile__show-btn
 
-    .wrap_relative
-      .wrap_center_h1
-        .main-name
-          h1.main-name__name Денис #[br] Белоцерковец
-          span.main-name__description Личный сайт #[br] веб разработчика
+      section.main-name      
+        h1.main-name__name Денис #[br] Белоцерковец
+        span.main-name__description Личный сайт #[br] веб разработчика
 
-        a(href="/#about_me").info-scroll
-          span.info-scroll__text Скролл
-          span.wrap-info-scroll__icon
-            span.info-scroll__icon
-            span.info-scroll__icon
+      a(href="/#about_me").info-scroll
+        span.info-scroll__text Скролл
+        span.wrap-info-scroll__icon
+          span.info-scroll__icon
+          span.info-scroll__icon
 
     section.wrap_cart#about_me
-      figure.cart-left
+      .cart-left
         .cart-photo
           +image('content/user.jpg', 'user-pic').cart-photo__img
 
-        figcaption.cart-photo__description
+        .cart-photo__description
 
           - 
             const key= ['Проживаю:', 'Возраст:', 'Родился:']
@@ -43,7 +42,7 @@ section.main-background.first-screen
               each item in val
                 li #{item}
       
-      section.cart-description
+      .cart-description
         header.cart-description__head Привет, меня зовут
 
         h2.cart-description__first-last-name Денис Белоцерковец

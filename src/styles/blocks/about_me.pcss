@@ -1,19 +1,20 @@
 /* Cart User */
 .wrap_cart {
-  margin: 100vh auto 50px;
+  margin: 0 auto;
   max-width: 925px;
   display: flex;
   justify-content: center;
-  padding: 60px auto 0;
   position: relative;
   z-index: 2;
+  padding-top: 176px;
+  padding-bottom: 50px;
 
   @include sm-block() {
     flex-wrap: wrap;
   }
 }
 
-figure.cart-left {
+.cart-left {
   margin: 0;
 
   @include sm-block() {
@@ -40,7 +41,7 @@ figure.cart-left {
     }
   }
 
-  figcaption.cart-photo__description {
+  .cart-photo__description {
     margin-left: -100px;
     margin-top: 78px;
     display: flex;

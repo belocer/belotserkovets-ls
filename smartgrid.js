@@ -5,12 +5,12 @@ const settings = {
   offset: '158Px',
   mobileFirst: false,
   container: {
-    maxWidth: '1799Px',
+    maxWidth: '1480Px',
     fields: '158Px'
   },
   breakPoints: {
     lg: {
-      width: '1799Px',
+      width: '1480Px',
       offset: '120Px',
       fields: '60Px'
     },

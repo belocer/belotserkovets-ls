@@ -1,4 +1,4 @@
-section.main-background {
+.main-background {
   width: 100vw;
   position: relative;
   z-index: 0;
@@ -15,7 +15,7 @@ section.main-background {
     height: 50%;
     background: linear-gradient(rgba(27, 32, 34, 0), #1b2022);
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     right: 0;
     z-index: 1;
@@ -26,39 +26,15 @@ section.main-background {
   }
 }
 
-.wrap_relative {
-  position: absolute;
-  z-index: 10;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  .wrap_center_h1 {
-    position: relative;
-    z-index: 11;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main-name {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  @include lg-block() {
-    left: 60%;
-  }
-
   @include md-block() {
-    left: 50%;
     display: flex;
     flex-direction: column;
   }
@@ -109,13 +85,10 @@ section.main-background {
 }
 
 .info-scroll {
-  position: absolute;
-  bottom: 2%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-decoration: none;
   display: flex;
   align-items: baseline;
+  margin-bottom: 58px;
 
   @include md-block() {
     display: none;
