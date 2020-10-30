@@ -36,7 +36,7 @@ section.works {
     color: #e6e6e6;
     position: absolute;
     right: -170px;
-    top: 212px;
+    top: 205px;
     z-index: -1;
 
     @include lg-block() {
@@ -59,7 +59,7 @@ section.works {
   }
 }
 
-.slider__list {
+ul.slider__list {
   position: absolute;
   right: 0;
   bottom: 59px;
@@ -70,37 +70,39 @@ section.works {
     display: none;
   }
 
-  button.slider__btn {
-    cursor: pointer;
-    display: inline-block;
-    width: 183px;
-    height: 103px;
-    border: none;
-    margin: 0;
-    outline: none;
-    padding: 0;
+  .slider__item {
+    button.slider__btn {
+      cursor: pointer;
+      display: inline-block;
+      width: 178px;
+      height: 100px;
+      border: none;
+      margin: 0;
+      outline: none;
+      padding: 0;
 
-    @include lg-block() {
-      width: 120px;
-      height: 67px;
-    }
+      @include lg-block() {
+        width: 120px;
+        height: 67px;
+      }
 
-    img {
-      min-width: 100%;
-      max-width: 100%;
-      min-height: 100%;
-      max-height: 100%;
+      img {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100%;
+        max-height: 100%;
+      }
     }
   }
 }
 
 .slider__switch {
   position: absolute;
-  right: -52px;
-  bottom: 58px;
+  right: -50px;
+  bottom: 64px;
 
   @include lg-block() {
-    right: -34px;
+    right: -33px;
   }
 
   @include sm-block() {
@@ -114,8 +116,8 @@ section.works {
     z-index: 20;
     border: none;
     outline: none;
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     background: #333c49;
     display: flex;
     justify-content: center;
@@ -222,6 +224,7 @@ section.works {
     .slider__main-img {
       position: relative;
       max-width: 975px;
+      width: 975px;
       margin-right: 145px;
 
       @include lg-block() {
@@ -256,7 +259,7 @@ section.works {
     }
 
     ul.scope-tech {
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       display: flex;
       flex-wrap: wrap;
 
@@ -270,7 +273,7 @@ section.works {
       }
 
       li.scope-tech__item {
-        padding: 14px 22px;
+        padding: 13px 21px;
         background: #f3f6f9;
         border-radius: 40px;
         margin-right: 8px;

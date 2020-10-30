@@ -13,18 +13,19 @@ section.works#works
             button(type="button").slider__switch-right
             button(type="button").slider__switch-left
 
-          .slider__list                    
-            button(type="button").slider__btn.slider__btn_active
-              +image('mywork1.jpg', 'mywork1.jpg').slider__small-img
-
-            button(type="button").slider__btn
-              +image('mywork2.jpg', 'mywork2.jpg').slider__small-img
-
-            button(type="button").slider__btn
-              +image('mywork3.jpg', 'mywork3.jpg').slider__small-img
-
-            button(type="button").slider__btn
-              +image('mywork4.jpg', 'mywork4.jpg').slider__small-img
+          ul.slider__list
+            li.slider__item                     
+              button(type="button").slider__btn.slider__btn_active
+                +image('mywork1.jpg', 'mywork1.jpg').slider__small-img
+            li.slider__item 
+              button(type="button").slider__btn
+                +image('mywork2.jpg', 'mywork2.jpg').slider__small-img
+            li.slider__item 
+              button(type="button").slider__btn
+                +image('mywork3.jpg', 'mywork3.jpg').slider__small-img
+            li.slider__item 
+              button(type="button").slider__btn
+                +image('mywork4.jpg', 'mywork4.jpg').slider__small-img
 
       .works__slider-description
 

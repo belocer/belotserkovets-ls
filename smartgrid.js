@@ -5,7 +5,7 @@ const settings = {
   offset: '158Px',
   mobileFirst: false,
   container: {
-    maxWidth: '1480Px',
+    maxWidth: '1800Px',
     fields: '158Px'
   },
   breakPoints: {
@@ -15,17 +15,17 @@ const settings = {
       fields: '60Px'
     },
     md: {
-      width: '1199Px',
+      width: '1200Px',
       offset: '120Px',
       fields: '60Px'
     },
     sm: {
-      width: '767Px',
+      width: '768Px',
       offset: '60Px',
       fields: '30Px'
     },
     i5: {
-      width: '319Px',
+      width: '320Px',
       offset: '20Px',
       fields: '7Px'
     }
