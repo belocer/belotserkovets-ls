@@ -1,0 +1,19 @@
+script(type="text/x-template")#reviews_temp
+  .wrapper
+    .reviews__head
+      h2.reviews__header Что обо мне говорят
+      .reviews__btns
+        button(@click="prev" ref="prevButton").reviews__left-btn
+        button(@click="next" ref="nextButton").reviews__right-btn
+
+    flickity(ref="flickity" :options="flickityOptions").slides
+      .slide(v-for="review in reviews")
+        p.slide-text {{ review.text }}
+
+        .slide-user
+          .slide-user__photo
+            img(:src="review.photo" alt="review.photo")
+          
+          .slide-user__description
+            .slide-user__name {{ review.avtor }}
+            .slide-user__post {{ review.title }}

@@ -8,9 +8,11 @@ section.reviews {
   padding: 0;
   max-width: 100%;
   padding-top: 143px;
+  padding-bottom: 143px;
 
   @include md-block() {
     padding-top: 120px;
+    padding-bottom: 120px;
   }
 
   @include sm-block() {
@@ -130,129 +132,136 @@ section.reviews {
 }
 
 .slides {
-  display: flex;
+  /*display: flex; Закрыл из-за Flickity */
   overflow: hidden;
-  padding-bottom: 200px;
   margin-bottom: 0;
+  max-width: 770px;
 
   @include md-block() {
-    padding-bottom: 140px;
     margin-bottom: 0;
+    max-width: 100%;
+  }
+}
+
+.slide {
+  padding-left: 100px;
+  min-height: 226px;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  margin-right: 50px;
+
+  @include md-block() {
+    justify-content: space-between;
+    padding-left: 60px;
   }
 
-  .slide {
-    margin-left: 157px;
-    min-height: 226px;
-    display: flex;
-    flex-direction: column;
+  @include sm-block() {
+    padding-left: 0;
+    min-width: 100%;
+  }
+}
+
+p.slide-text {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 90;
+
+  @include md-block() {
+    font-size: 14px;
+  }
+
+  &::after {
+    content: "";
+    width: 77px;
+    height: 58px;
+    background: svg-load(
+        "quote.svg",
+        fill=rgba(#303133, 1),
+        width=100%,
+        height=100%
+      )
+      no-repeat;
+    position: absolute;
+    top: 5px;
+    left: -75px;
+    z-index: 100;
 
     @include md-block() {
-      justify-content: space-between;
-      margin-left: 100px;
+      width: 47px;
+      height: 37px;
+      left: -55px;
     }
 
     @include sm-block() {
-      margin-left: 0;
-      min-width: 100%;
+      display: none;
     }
+  }
+}
 
-    p.slide-text {
-      font-style: normal;
-      font-weight: 600;
+.slide-user {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+
+  @include md-block() {
+    margin-top: 20px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__photo {
+    height: 75px;
+    width: 75px;
+    min-height: 75px;
+    min-width: 75px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+
+    @include md-block() {
+      margin-right: 7px;
+    }
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 13px;
+    min-width: 210px;
+
+    @include md-block() {
       font-size: 16px;
-      line-height: 30px;
-      color: rgba(255, 255, 255, 0.6);
-      position: relative;
-      z-index: 90;
-
-      @include md-block() {
-        font-size: 14px;
-      }
-
-      &::after {
-        content: "";
-        width: 77px;
-        height: 58px;
-        background: svg-load(
-            "quote.svg",
-            fill=rgba(#303133, 1),
-            width=100%,
-            height=100%
-          )
-          no-repeat;
-        position: absolute;
-        top: 5px;
-        left: -75px;
-        z-index: 100;
-
-        @include md-block() {
-          width: 47px;
-          height: 37px;
-          left: -55px;
-        }
-
-        @include sm-block() {
-          display: none;
-        }
-      }
+      min-width: 0;
     }
+    @include md-block() {
+      margin-bottom: 3px;
+    }
+  }
 
-    .slide-user {
-      margin-top: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 300px;
+  &__post {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.5);
+    display: block;
 
-      @include md-block() {
-        margin-top: 20px;
-      }
-
-      &__description {
-        display: flex;
-        flex-direction: column;
-      }
-
-      &__photo {
-        height: 75px;
-        width: 75px;
-        overflow: hidden;
-        border-radius: 50%;
-
-        @include md-block() {
-          margin-right: 7px;
-        }
-      }
-
-      &__name {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 25px;
-        color: #ffffff;
-        display: block;
-        margin-bottom: 13px;
-
-        @include md-block() {
-          font-size: 16px;
-        }
-        @include md-block() {
-          margin-bottom: 3px;
-        }
-      }
-
-      &__post {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 22px;
-        color: rgba(255, 255, 255, 0.5);
-        display: block;
-
-        @include md-block() {
-          font-size: 14px;
-        }
-      }
+    @include md-block() {
+      font-size: 14px;
     }
   }
 }
