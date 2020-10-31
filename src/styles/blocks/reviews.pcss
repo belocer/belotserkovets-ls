@@ -145,11 +145,10 @@ section.reviews {
 
 .slide {
   padding-left: 100px;
-  min-height: 226px;
+  min-height: 235px;
   display: flex;
   flex-direction: column;
   max-width: 50%;
-  margin-right: 50px;
 
   @include md-block() {
     justify-content: space-between;
@@ -170,6 +169,7 @@ p.slide-text {
   color: rgba(255, 255, 255, 0.6);
   position: relative;
   z-index: 90;
+  max-width: 310px;
 
   @include md-block() {
     font-size: 14px;
@@ -208,7 +208,7 @@ p.slide-text {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 300px;
+  width: 300px;
 
   @include md-block() {
     margin-top: 20px;
@@ -226,7 +226,7 @@ p.slide-text {
     min-width: 75px;
     overflow: hidden;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 10px;
 
     @include md-block() {
       margin-right: 7px;

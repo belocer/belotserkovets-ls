@@ -10,19 +10,15 @@ new Vue({
   data() {
     return {
       reviews: [],
-      width_screen: document.documentElement.clientWidth,
       flickityOptions: {
         prevNextButtons: false,
         pageDots: false,
-        groupCells: 2
+        groupCells: true
       },
-
     }
   },
-  watch: {
-    width_screen(val) {
-      // this.flickityOptions.groupCells = (val > 1200) ? 2 : true
-    }
+  computed: {
+
   },
   methods: {
     fixImagePath() {
@@ -39,6 +35,7 @@ new Vue({
     }
   },
   mounted() {
+
     this.fixImagePath();
 
     let ref = this.$refs;
