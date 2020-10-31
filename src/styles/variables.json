@@ -2,7 +2,7 @@
   "text-color": "#ffffff",
   "links-color": "#FF9A00",
   "errors-color": "#cd1515",
-  "bp-desktop-hd": "1800px",
+  "bp-desktop-hd": "1480px",
   "bp-desktop": "1200px",
   "bp-tablets": "768px",
   "bp-phones": "480px"

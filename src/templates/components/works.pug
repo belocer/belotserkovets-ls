@@ -1,0 +1,68 @@
+script(type="text/x-template")#preview-container
+  .works__wrap
+    display(
+      :currentWork="currentWork"
+      :works="works"
+      @slide="slide"
+    )
+    info(
+      :currentWork="currentWork",
+    )
+
+script(type="text/x-template")#preview-display
+  .slider
+    .slider__main-img
+      img(:src="currentWork.photo" alt="Превью главного фото")
+
+      #slider__number {{ currentWork.id }}
+
+      btns(
+        @slide="$emit('slide', $event)"
+      )
+
+      thumbs(
+        :works="reversedWorks",
+        :currentWork="currentWork",
+      )
+
+script(type="text/x-template")#preview-thumbs
+  ul.slider__list
+    li.slider__item(
+      v-for="slide in works" :key="slide.id"
+      )                  
+      button(
+        type="button"
+        :class="{active: currentWork.id === slide.id}"
+      ).slider__btn.slider__btn_active
+        img(:src="slide.photo").slider__small-img
+
+script(type="text/x-template")#preview-btns
+  .slider__switch
+    button(
+      type="button"
+      @click="$emit('slide', 'next')"
+      ).slider__switch-right
+    button(
+      type="button"
+      @click="$emit('slide', 'prev')"
+      ).slider__switch-left
+
+script(type="text/x-template")#preview-info
+  .works__slider-description
+
+    tags(
+      :tags="tagsArray"
+    )
+
+    h3.slider-description__header {{ currentWork.title }}
+
+    p.slider-description__text {{ currentWork.desc }}      
+
+    a(:href="currentWork.link" target="_blank").link-more
+      .link-more__icon
+      .link-more__text Посмотреть сайт
+
+script(type="text/x-template")#preview-tags
+  ul.scope-tech
+    li.scope-tech__item(v-for="tag in tags")
+      div {{ tag }}

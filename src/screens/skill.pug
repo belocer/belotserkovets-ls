@@ -1,0 +1,19 @@
+section.skills#skills
+  .skills__head
+    h2.skills__header Чем я могу быть полезен вам
+    p.skills__description
+      | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
+      | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
+      | как тут всё классно и красиво!
+
+  .skills__container
+    .hands-keyboard
+      +image('hands.png', 'hands-keyboard')
+
+    .wrap-skills
+      svg(viewBox="0 0 0 0" height="0" width="0")
+        linearGradient(id="gradient" x1="0%" y1="100%" x2="100%" y2="0%")
+          stop(offset="0%" stop-color="#d0721b")
+          stop(offset="0%" stop-color="#DC9322")
+
+      #skills-component

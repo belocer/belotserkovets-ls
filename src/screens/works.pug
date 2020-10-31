@@ -2,46 +2,4 @@ section.works#works
   .wrapper
     h2.works__headers Мои работы
 
-    .works__wrap
-      .slider
-        .slider__main-img
-          +image('mywork1.jpg', 'mywork1.jpg')
-
-          #slider__number 2
-
-          .slider__switch
-            button(type="button").slider__switch-right
-            button(type="button").slider__switch-left
-
-          ul.slider__list
-            li.slider__item                     
-              button(type="button").slider__btn.slider__btn_active
-                +image('mywork1.jpg', 'mywork1.jpg').slider__small-img
-            li.slider__item 
-              button(type="button").slider__btn
-                +image('mywork2.jpg', 'mywork2.jpg').slider__small-img
-            li.slider__item 
-              button(type="button").slider__btn
-                +image('mywork3.jpg', 'mywork3.jpg').slider__small-img
-            li.slider__item 
-              button(type="button").slider__btn
-                +image('mywork4.jpg', 'mywork4.jpg').slider__small-img
-
-      .works__slider-description
-
-        - const scope_tech= ['HTML', 'CSS', 'Javascript', 'PHP']
-        ul.scope-tech
-          each item in scope_tech
-            li.scope-tech__item #{item}
-
-        h3.slider-description__header Сайт школы образования
-
-        p.slider-description__text
-          | Этот парень проходил обучение
-          | веб-разработке не где-то, а в LoftSchool!
-          | 2 месяца только самых тяжелых
-          | испытаний и бессонных ночей!
-
-        a(href="#" target="_blank").link-more
-          .link-more__icon
-          .link-more__text Посмотреть сайт
+    #preview-component

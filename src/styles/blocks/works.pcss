@@ -92,6 +92,10 @@ ul.slider__list {
         min-height: 100%;
         max-height: 100%;
       }
+
+      &:hover {
+        border: 2px solid $links-color;
+      }
     }
   }
 }
@@ -242,6 +246,10 @@ ul.slider__list {
       @include sm-block() {
         margin-right: 0;
       }
+
+      img {
+        min-width: 100%;
+      }
     }
   }
 
@@ -383,6 +391,6 @@ ul.slider__list {
   }
 }
 
-.slider__btn_active {
+.active {
   border: 2px solid $links-color !important;
 }

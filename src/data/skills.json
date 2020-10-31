@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "category": "Frontend",
+    "skills": [
+      {
+        "id": 1,
+        "title": "HTML",
+        "percent": 85
+      },
+            {
+        "id": 2,
+        "title": "CSS",
+        "percent": 75
+      },
+      {
+        "id": 3,
+        "title": "Javascript",
+        "percent": 65
+      },
+            {
+        "id": 4,
+        "title": "Vue",
+        "percent": 55
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "category": "Backend",
+    "skills": [
+      {
+        "id": 1,
+        "title": "PHP",
+        "percent": 85
+      },
+            {
+        "id": 2,
+        "title": "Wordpress",
+        "percent": 45
+      },
+      {
+        "id": 3,
+        "title": "MySQL",
+        "percent": 50
+      },
+            {
+        "id": 4,
+        "title": "Laravel",
+        "percent": 50
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "category": "Workflow",
+    "skills": [
+      {
+        "id": 1,
+        "title": "Gulp",
+        "percent": 90
+      },
+            {
+        "id": 2,
+        "title": "Terminal",
+        "percent": 80
+      },
+      {
+        "id": 3,
+        "title": "Git",
+        "percent": 70
+      },
+            {
+        "id": 4,
+        "title": "Webpack",
+        "percent": 50
+      }
+    ]
+  }
+]

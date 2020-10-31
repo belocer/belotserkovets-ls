@@ -1,0 +1,30 @@
+script(type="text/x-template")#skills-list
+  .skills-block
+    div(v-for="category in skills" :key="category.category")
+      skills-row(
+        :category="category"
+      )
+
+
+script(type="text/x-template")#skills-row
+  div
+    h3.skills-block__head {{ category.category }}
+      ul.skills-block__list
+        li.svgli(v-for="skill in category.skills" :key="skill.id")
+          skills-item(
+            :skill="skill"
+          )
+
+script(type="text/x-template")#skills-item
+  div
+    svg(viewBox="0 0 100 100" height="136" width="136").svgls
+      circle(r="40" cx="50%" cy="50%" ).svgsircle.under-layer
+      circle(
+        r="40" 
+        cx="50%" 
+        cy="50%" 
+        stroke="url(#gradient)" 
+        transform="rotate(180 50 50)"
+        ref="colored-circle"
+        ).svgsircle.above-layer
+    .skill__title {{ skill.title }}

@@ -7,5 +7,3 @@ sandwich.addEventListener('click', showMobileMenu)
 
 let hideMobileMenu = () => menu_mobile.style.display = 'none'
 cross.addEventListener('click', hideMobileMenu)
-
-console.log(666666)
