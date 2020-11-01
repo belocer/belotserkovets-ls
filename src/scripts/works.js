@@ -2,7 +2,12 @@ import Vue from "vue";
 
 const thumbs = {
   props: ["works", "currentWork"],
-  template: "#preview-thumbs"
+  template: "#preview-thumbs",
+  methods: {
+    /*     showItem(id) {
+          console.log(id);
+        }, */
+  },
 };
 
 const btns = {
@@ -65,6 +70,7 @@ new Vue({
     currentIndex(value) {
       this.makeInfiniteLoopForIndex(value);
     },
+    
   },
   methods: {
     makeInfiniteLoopForIndex(index) {
@@ -85,15 +91,18 @@ new Vue({
         case "next":
           this.works.push(this.works[0]);
           this.works.shift();
-          //this.currentIndex++;
           break;
         case "prev":
           this.works.unshift(lastItem);
           this.works.pop();
-          //this.currentIndex--;
           break;
       }
-    }
+    },
+    showitem(index) {
+      let s = this.works[index];
+      this.works.splice(index, 1);
+      this.works.unshift(s);
+    },
   },
   created() {
     const data = require("./../data/works.json");

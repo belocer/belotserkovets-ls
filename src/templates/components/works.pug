@@ -1,9 +1,10 @@
 script(type="text/x-template")#preview-container
   .works__wrap
     display(
-      :currentWork="currentWork"
-      :works="works"
-      @slide="slide"
+      :currentWork="currentWork",
+      :works="works",
+      @slide="slide",
+      @showitem="showitem",
     )
     info(
       :currentWork="currentWork",
@@ -23,16 +24,18 @@ script(type="text/x-template")#preview-display
       thumbs(
         :works="reversedWorks",
         :currentWork="currentWork",
+        @showitem="$emit('showitem', $event)"
       )
 
 script(type="text/x-template")#preview-thumbs
   ul.slider__list
     li.slider__item(
-      v-for="slide in works" :key="slide.id"
+      v-for="(slide, index) in works" :key="slide.id"
       )                  
       button(
-        type="button"
-        :class="{active: currentWork.id === slide.id}"
+        type="button",
+        :class="{active: currentWork.id === slide.id}",
+        @click="$emit('showitem', index)"
       ).slider__btn.slider__btn_active
         img(:src="slide.photo").slider__small-img
 

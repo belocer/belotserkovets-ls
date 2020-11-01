@@ -135,7 +135,7 @@ section.reviews {
   /*display: flex; Закрыл из-за Flickity */
   overflow: hidden;
   margin-bottom: 0;
-  max-width: 770px;
+  max-width: 850px;
 
   @include md-block() {
     margin-bottom: 0;
@@ -153,6 +153,11 @@ section.reviews {
   @include md-block() {
     justify-content: space-between;
     padding-left: 60px;
+  }
+
+  @media screen and (max-width: 850px) {
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   @include sm-block() {
@@ -242,6 +247,10 @@ p.slide-text {
     display: block;
     margin-bottom: 13px;
     min-width: 210px;
+
+    @media screen and (max-width: 850px) {
+      min-width: 0;
+    }
 
     @include md-block() {
       font-size: 16px;
