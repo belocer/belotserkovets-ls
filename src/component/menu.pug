@@ -1,0 +1,14 @@
+mixin menu(position)
+  nav.header__nav
+    ul.menu
+      li.menu__item
+        a(href="/#about_me" class=`${position}`).menu__link Обо мне
+
+      li.menu__item
+        a(href="/#skills" class=`${position}`).menu__link Навыки
+
+      li.menu__item 
+        a(href="/#my-works" class=`${position}`).menu__link Работы
+
+      li.menu__item 
+        a(href="/#reviews" class=`${position}`).menu__link Отзывы

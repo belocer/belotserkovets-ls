@@ -1,0 +1,58 @@
+section.skills#skills
+  .skills__head
+    h2.skills__header Чем я могу быть полезен вам
+    p.skills__description
+      | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br]
+      | LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br]
+      | как тут всё классно и красиво!
+
+  .skills__container
+    .hands-keyboard
+      +image('hands.png', 'hands-keyboard')
+
+    .wrap_skills
+      .frontend
+        h3.frontend__head Front-end
+        - const percent1 = 80  
+        - const frontend_arr= ['HTML5', 'CSS3', 'Javascript', 'Vue.js']
+        ul.frontend__list
+          - for(let i = 1; i < frontend_arr.length+1; i++)
+            li.svgli
+                svg(viewBox="0 0 100 100" height="136" width="136").svgls
+                  circle(r="40" cx="50%" cy="50%" ).svgsircle.under-layer
+                  circle(r="40" cx="50%" cy="50%" stroke="url(#gradient1)" transform="rotate(180 50 50)" style=`stroke-dasharray: ${(percent1-(i * 10))*5} 282.6`).svgsircle.above-layer
+                  linearGradient(id="gradient1" x1="0%" y1="100%" x2="100%" y2="0%")
+                    stop(offset="0%" stop-color="#d0721b")
+                    stop(offset="0%" stop-color="#DC9322")
+                .skill__title #{frontend_arr[i-1]}
+
+      .backend
+        h3.backend__head Back-end
+        - const percent2 = 80  
+        - const backend_arr= ['PHP', 'Wordpress', 'MySQL', 'Laravel']
+        
+        ul.backend__list
+          - for(let i = 1; i < backend_arr.length+1; i++)
+            li.svgli
+                svg(viewBox="0 0 100 100" height="136" width="136").svgls
+                  circle(r="40" cx="50%" cy="50%" ).svgsircle.under-layer
+                  circle(r="40" cx="50%" cy="50%" stroke="url(#gradient2)" transform="rotate(180 50 50)" style=`stroke-dasharray: ${(percent2-(i * 10))*5} 282.6`).svgsircle.above-layer
+                  linearGradient(id="gradient2" x1="0%" y1="100%" x2="100%" y2="0%")
+                    stop(offset="0%" stop-color="#d0721b")
+                    stop(offset="0%" stop-color="#DC9322")
+                .skill__title #{backend_arr[i-1]}
+
+      .workflow
+        h3.workflow__head Workflow
+        - const percent3 = 80  
+        - const workflow_arr= ['Gulp', 'Terminal', 'Git', 'Webpack']
+        ul.workflow__list
+          - for(let i = 1; i < workflow_arr.length+1; i++)
+            li.svgli
+                svg(viewBox="0 0 100 100" height="136" width="136").svgls
+                  circle(r="40" cx="50%" cy="50%" ).svgsircle.under-layer
+                  circle(r="40" cx="50%" cy="50%" stroke="url(#gradient3)" transform="rotate(180 50 50)" style=`stroke-dasharray: ${(percent3-(i * 10))*5} 282.6`).svgsircle.above-layer
+                  linearGradient(id="gradient3" x1="0%" y1="100%" x2="100%" y2="0%")
+                    stop(offset="0%" stop-color="#d0721b")
+                    stop(offset="0%" stop-color="#DC9322")
+                .skill__title #{workflow_arr[i-1]}

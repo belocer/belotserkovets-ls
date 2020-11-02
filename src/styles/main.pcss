@@ -1,5 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-@import "normalize.css";
 @import "./mixins.pcss";
-@import "./layout/base.pcss";
-@import './blocks/*.pcss';
+@import "./smart-grid.pcss";
+@import "./layout/header.pcss";
+@import "./blocks/*.pcss";
+@import "./layout/footer.pcss";
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+
+html,
+body {
+  font-size: 16px;
+  @include reset();
+  font-family: "Open Sans";
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.2s;
+  @include reset();
+}
+
+/* .debug {
+  @include debug($links-color, 1px solid #4affff);
+} */
+
+.wrapper {
+  @include wrapper();
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/*
+@include md-block() {
+  margin-top: 20px;
+}
+
+@include md(font-size, 18px);
+*/

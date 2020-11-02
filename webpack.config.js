@@ -6,11 +6,13 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = "/";
+  const publicPath = "./";
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -37,7 +39,7 @@ module.exports = (env, argv) => {
   };
 
   const files = {
-    test: /\.(png|jpe?g|gif|woff2?)$/i,
+    test: /\.(xml|ico|png|jpe?g|gif|woff2?)$/i,
     loader: "file-loader",
     options: {
       name: "[hash].[ext]",
@@ -46,8 +48,7 @@ module.exports = (env, argv) => {
 
   const svg = {
     test: /\.svg$/,
-    use: [
-      {
+    use: [{
         loader: "svg-sprite-loader",
         options: {
           extract: true,
@@ -58,8 +59,9 @@ module.exports = (env, argv) => {
       {
         loader: "svgo-loader",
         options: {
-          plugins: [
-            { removeTitle: true },
+          plugins: [{
+              removeTitle: true
+            },
             {
               removeAttrs: {
                 attrs: "(fill|stroke)",
@@ -73,8 +75,7 @@ module.exports = (env, argv) => {
 
   const pug = {
     test: /\.pug$/,
-    oneOf: [
-      {
+    oneOf: [{
         resourceQuery: /^\?vue/,
         use: ["pug-plain-loader"],
       },
@@ -84,6 +85,10 @@ module.exports = (env, argv) => {
     ],
   };
 
+  const group_media_queries = {
+    loader: "group-css-media-queries-loader"
+  };
+  const sourceMap = false;
   const config = {
     entry: {
       main: "./src/main.js",
@@ -95,6 +100,7 @@ module.exports = (env, argv) => {
       publicPath: isProductionBuild ? publicPath : "",
       chunkFilename: "[chunkhash].js",
     },
+    devtool: sourceMap && "source-map",
     module: {
       rules: [pcss, vue, js, files, svg, pug],
     },
@@ -125,7 +131,9 @@ module.exports = (env, argv) => {
         filename: "admin/index.html",
         chunks: ["admin"],
       }),
-      new SpriteLoaderPlugin({ plainSprite: true }),
+      new SpriteLoaderPlugin({
+        plainSprite: true
+      }),
       new VueLoaderPlugin(),
     ],
     devtool: "#eval-source-map",
