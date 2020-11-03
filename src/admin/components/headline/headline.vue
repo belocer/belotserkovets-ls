@@ -1,6 +1,6 @@
 <template>
 <div class="headline-component" :style="measures">
-  <img class="image" v-bind="$attrs" alt="user picture" />
+
 </div>
 </template>
 
@@ -9,15 +9,15 @@ export default {
   props: {
     size: {
       type: String,
-      default: "3"
+      default: "#43436B"
     }
   },
   computed: {
     measures() {
-      const size = Number(this.size);
+      const bg = String(this.bg);
       return {
-        width: `${size}rem`,
-        height: `${size}rem`,
+        width: `${bg}rem`,
+        height: `${bg}rem`,
       }
     }
   }

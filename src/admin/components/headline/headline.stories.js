@@ -10,12 +10,12 @@ export default {
 export const defaultView = () => ({
   components: { headline },
   props: {
-    size: {
-      default: text("size", "3.1")
+    bg: {
+      default: text("bg", "#43436B")
     }
   },
   template: `
-    <headline :size="size" src="https://picsum.photos/300/300" />
+    <headline :bg="bg"/>
   `,
 });
 
