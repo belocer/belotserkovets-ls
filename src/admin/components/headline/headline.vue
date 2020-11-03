@@ -1,7 +1,7 @@
 <template>
-  <div class="avatar-component" :style="measures">
-    <img class="image" v-bind="$attrs" alt="user picture" />
-  </div>
+<div class="headline-component" :style="measures">
+  <img class="image" v-bind="$attrs" alt="user picture" />
+</div>
 </template>
 
 <script>
@@ -24,4 +24,4 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped src="./avatar.pcss"></style>
+<style lang="postcss" scoped src="./headline.pcss"></style>
