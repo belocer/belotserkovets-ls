@@ -1,21 +1,21 @@
-import avatar from "./avatar.vue";
+import username from "./username.vue";
 import { text, withKnobs } from "@storybook/addon-knobs";
 
 export default {
-  title: "avatar",
-  components: { avatar },
+  title: "user name",
+  components: { username },
   decorators: [withKnobs]
 };
 
 export const defaultView = () => ({
-  components: { avatar },
+  components: { username },
   props: {
     size: {
       default: text("size", "3.1")
     }
   },
   template: `
-    <avatar :size="size" src="https://picsum.photos/300/300" />
+    user name
   `,
 });
 

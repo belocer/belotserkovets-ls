@@ -1,7 +1,7 @@
 <template>
-  <div class="avatar-component" :style="measures">
-    <img class="image" v-bind="$attrs" alt="user picture" />
-  </div>
+<div class="avatar-component" :style="measures">
+  <img class="image" v-bind="$attrs" alt="user picture" src="https://picsum.photos/300/300" />
+</div>
 </template>
 
 <script>
