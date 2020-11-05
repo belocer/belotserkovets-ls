@@ -1,0 +1,36 @@
+@import "../../../styles/mixins.pcss";
+
+.menulink {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  min-width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+
+  .menulink__item {
+    list-style: none;
+    box-sizing: border-box;
+  
+    .menulink__link {
+      padding: 30px;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: #414C63;
+      text-decoration: none;
+      display: block;
+      box-sizing: border-box;
+      margin-bottom: 3px;
+
+      &:hover {
+        box-sizing: border-box;
+        color: #383BCF;
+        font-weight: 800;
+        border-bottom: 3px solid #383BCF;
+      }
+    }
+  }
+}
