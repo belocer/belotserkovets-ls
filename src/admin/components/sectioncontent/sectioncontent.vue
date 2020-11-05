@@ -2,6 +2,7 @@
 <section class="sectioncontent">
   <div class="container">
     <mainheader></mainheader>
+    <card></card>
   </div>
 </section>
 </template>
@@ -12,6 +13,7 @@ export default {
   computed: {},
   components: {
     mainheader: () => import("components/mainheader"),
+    card: () => import("components/card"),
   }
 }
 </script>
