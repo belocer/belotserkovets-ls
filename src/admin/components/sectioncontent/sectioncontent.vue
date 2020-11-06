@@ -1,8 +1,18 @@
 <template>
 <section class="sectioncontent">
   <div class="container">
-    <mainheader></mainheader>
-    <card></card>
+    <mainheader @addgroup="showgroup($event)"></mainheader>
+    <ul class="skills">
+      <li class="item" v-if="emptyCatIsShow === true">
+        <category empty></category>
+      </li>
+      <li class="item" v-for="category in categories" :key="category.id">
+        <category :title="category.category" :skills="category.skills"></category>
+      </li>
+      <!-- <li>
+        <category :title="category.category" :skills="category.skills"></category>
+      </li> -->
+    </ul>
   </div>
 </section>
 </template>
@@ -13,7 +23,21 @@ export default {
   computed: {},
   components: {
     mainheader: () => import("components/mainheader"),
-    card: () => import("components/card"),
+    category: () => import("components/category"),
+  },
+  data() {
+    return {
+      categories: [],
+      emptyCatIsShow: false
+    }
+  },
+  methods: {
+    showgroup(e) {
+      console.log(e)
+    }
+  },
+  created() {
+    this.categories = require("../data/categories.json");
   }
 }
 </script>

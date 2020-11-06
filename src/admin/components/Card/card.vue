@@ -1,9 +1,8 @@
 <template>
 <div class="card-component card_plain" v-if="simple">
-  <inputhead></inputhead>
   <slot name="default"></slot>
 </div>
-<div class="card-component" v-else>
+<div :class="['card-component', { slim: slim }]" v-else>
   <div class="header">
     <div class="text" v-text="title"></div>
     <slot name="title" v-if="!!title === false"></slot>
@@ -19,12 +18,10 @@ export default {
   props: {
     title: {
       type: String,
-      default: ""
+      default: "",
     },
-    simple: true
-  },
-  components: {
-    inputhead: () => import("components/input"),
+    simple: Boolean,
+    slim: Boolean,
   },
 };
 </script>

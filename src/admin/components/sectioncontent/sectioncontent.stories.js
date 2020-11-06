@@ -1,6 +1,10 @@
 import sectioncontent from "./sectioncontent.vue";
 import { withKnobs } from "@storybook/addon-knobs";
 
+const methods = {
+  onAddGroup: action("onAddGroup")
+}
+
 export default {
   title: "sectioncontent",
   components: { sectioncontent },

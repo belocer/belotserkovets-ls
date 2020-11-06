@@ -5,7 +5,7 @@
   </headline>
   <menucontainer></menucontainer>
   <sectioncontent>
-    <mainheader></mainheader>
+
   </sectioncontent>
 </div>
 </template>
@@ -15,14 +15,13 @@ import avatar from './components/avatar/avatar'
 import headline from './components/headline/headline'
 import menucontainer from './components/menucontainer/menucontainer'
 import sectioncontent from './components/sectioncontent/sectioncontent'
-import mainheader from './components/mainheader/mainheader'
+
 export default {
   components: {
     avatar,
     headline,
     menucontainer,
-    sectioncontent,
-    mainheader,
+    sectioncontent
   }
 }
 </script>

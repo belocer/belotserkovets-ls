@@ -1,5 +1,10 @@
 import mainheader from "./mainheader.vue";
 import { withKnobs } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
+
+const methods = {
+  onAddgroup: action("onAddgroup")
+}
 
 export default {
   title: "mainheader",

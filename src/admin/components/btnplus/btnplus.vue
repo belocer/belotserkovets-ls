@@ -1,6 +1,6 @@
 <template>
 <div class="btnadd__icon" :style="measures">
-  +
+  <span class="btnadd__plus">+</span>
 </div>
 </template>
 

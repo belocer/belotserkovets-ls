@@ -1,0 +1,88 @@
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 0 30px 0;
+
+  li {
+    display: inline-block;
+    width: calc(50% - 24px);
+    list-style: none;
+    margin-right: 24px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 768px) {
+      min-width: 100%;
+    }
+  }
+
+
+}
+
+.item {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.bottom-line {
+  padding-top: 70px;
+  margin-top: auto;
+  padding-left: 25%;
+}
+
+.icon-component {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.content {
+  
+  .skills {
+
+    .item {
+      min-width: 100%;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: #373E42;
+      padding-bottom: 0;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+button.round-button-component {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.percent {
+  &:after {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: rgba(65, 76, 99, 0.5);
+  }
+}
+
+.skill-add-line-component {
+  .title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  }
+
+  .percent {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  }
+}
+
+.input__elem.field__elem{
+  border: none;
+}
