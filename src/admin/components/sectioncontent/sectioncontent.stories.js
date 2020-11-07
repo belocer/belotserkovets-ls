@@ -1,8 +1,9 @@
 import sectioncontent from "./sectioncontent.vue";
 import { withKnobs } from "@storybook/addon-knobs";
+import { action } from "@storybook/addon-actions";
 
 const methods = {
-  onAddGroup: action("onAddGroup")
+  onAddGroup: action("onAddgroup")
 }
 
 export default {
@@ -16,8 +17,11 @@ export const defaultView = () => ({
   props: {
 
   },
+  methods,
   template: `
-    <sectioncontent/>
+    <sectioncontent>
+      <btnaddgroup></btnaddgroup>
+    </sectioncontent>
   `,
 });
 

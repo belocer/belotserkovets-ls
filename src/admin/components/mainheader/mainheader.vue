@@ -1,37 +1,28 @@
 <template>
 <div class="mainheader">
-  <h1 class="mainheader__header">Блок «Обо мне»</h1>
-  <btnaddgroup @addgroup="csl($event)"></btnaddgroup>
-  <!--
-  <iconed-btn type="iconed" @click="onClick" title="Добавить группу" /> -->
+  <h1 class="mainheader__header">{{ title }}</h1>
 </div>
 </template>
 
 <script>
-import btnaddgroup from 'components/btnaddgroup'
-//import btnaddgroup from 'components/btnaddgroup'
-
 export default {
   props: {
 
   },
   data() {
     return {
-
+      title: 'Блок «Обо мне»'
     }
   },
   methods: {
-    csl(e) {
-      console.log(e);
-      console.log(4554456456);
+    hideBtn(e) {
+      console.log('mainheader - ', e);
+      this.$emit('addgroup', e)
+      e.currentTarget.style.display = 'none'
     }
   },
   computed: {},
-  components: {
-    //btnaddgroup: () => import("components/btnaddgroup")
-    'iconed-btn': () => import("components/button"),
-    btnaddgroup,
-  }
+  components: {},
 }
 </script>
 

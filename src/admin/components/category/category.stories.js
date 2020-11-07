@@ -1,4 +1,4 @@
-import category from "./category"
+import category from "./category";
 import { action } from "@storybook/addon-actions";
 
 const methods = {
@@ -14,7 +14,7 @@ export default {
 
 const skills = [
   {id: 0, title: "CSS", percent: 80},
-  {id: 0, title: "HTML", percent: 50},
+  {id: 1, title: "HTML", percent: 50},
 ]
 
 export const defaultView = () => ({
@@ -34,5 +34,5 @@ export const defaultView = () => ({
       @edit-skill="onEditSkill"
     /> 
   `,
-  methods
+  methods,
 })

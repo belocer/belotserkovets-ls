@@ -1,5 +1,5 @@
 <template>
-<button class="btnaddgroup" @click="$emit('addgroup', true)" @mousedown="hideBTN" v-if="showBtnAddGroup">
+<button class="btnaddgroup" @click="$emit('addgroup', $event)">
   <btnplus :style="`width: ${whicon}px; height: ${whicon}px`"></btnplus>
   <span class="btnaddgroup__text">Добавить группу</span>
 </button>
@@ -14,19 +14,13 @@ export default {
     }
   },
   data() {
-    return {
-      showBtnAddGroup: true
-    }
+    return {}
   },
   components: {
     btnplus: () => import("components/btnplus"),
   },
   computed: {},
-  methods: {
-    hideBTN() {
-      this.showBtnAddGroup = !this.showBtnAddGroup
-    }
-  }
+  methods: {}
 }
 </script>
 

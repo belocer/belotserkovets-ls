@@ -20,28 +20,6 @@ import editLine from "../editLine";
 import skill from "../skill";
 import skillAddLine from "../skillAddLine";
 
-/* const skills = [{
-    id: 0,
-    title: "HTML",
-    percent: 80
-  },
-  {
-    id: 1,
-    title: "CSS",
-    percent: 70
-  },
-  {
-    id: 2,
-    title: "Javascript",
-    percent: 60
-  },
-  {
-    id: 3,
-    title: "PHP",
-    percent: 50
-  },
-]; */
-
 export default {
   components: {
     card,

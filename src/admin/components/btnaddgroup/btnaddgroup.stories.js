@@ -3,7 +3,6 @@ import { action } from "@storybook/addon-actions";
 
 const methods = {
   onClick: action("onClick"),
-  onChange: action("onChange")
 }
 
 export default {
@@ -13,6 +12,8 @@ export default {
 
 export const defaultView = () => ({
   components: { btnaddgroup },
+  template: "<btnaddgroup />",
+  methods,
 });
 
 defaultView.story = {
