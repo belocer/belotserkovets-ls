@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{1062:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__);var _menulink_vue__WEBPACK_IMPORTED_MODULE_0__=__webpack_require__(251);__webpack_require__.d(__webpack_exports__,"default",(function(){return _menulink_vue__WEBPACK_IMPORTED_MODULE_0__.a}))}}]);
-//# sourceMappingURL=15.a3d46d6957c2308c8df0.bundle.js.map
