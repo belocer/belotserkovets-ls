@@ -9,7 +9,16 @@
   <div v-else class="title">
     <div class="input">
 
-      <app-input placeholder="Название новой группы" :value="value" :errorText="errorText" @input="$emit('input', $event)" @keydown.native.enter="onApprove" autofocus="autofocus" no-side-paddings="no-side-paddings"></app-input>
+      <app-input
+        placeholder="Название новой группы"
+        :value="value"
+        :errorText="errorText"
+        @input="$emit('input', $event)"
+        @keydown.native.enter="onApprove"
+        autofocus="autofocus"
+        no-side-paddings="no-side-paddings"
+        required
+      ></app-input>
 
     </div>
     <div class="buttons">
