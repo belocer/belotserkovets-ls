@@ -6,10 +6,10 @@
       <btnaddgroup @addgroup="hideBtn($event)" v-if="emptyCatIsShow === false" />
     </div>
     <ul class="skills">
-      <li class="item" v-if="emptyCatIsShow === true">
+      <li class="skills__item" v-if="emptyCatIsShow === true">
         <category @remove="emptyCatIsShow = false" empty></category>
       </li>
-      <li class="item" v-for="category in categories" :key="category.id">
+      <li class="skills__item" v-for="category in categories" :key="category.id">
         <category 
                 :title="category.category" 
                 :skills="category.skills"

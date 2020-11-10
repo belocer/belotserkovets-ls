@@ -7,8 +7,8 @@
           @remove="$emit('remove', $event)"
   />
   <template slot="content">
-    <ul class="skills" v-if="empty === false">
-      <li class="item" v-for="skill in skills" :key="skill.id">
+    <ul class="skill" v-if="empty === false">
+      <li class="skill__item" v-for="skill in skills" :key="skill.id">
         <skill
           :skill="skill"
           @remove="$emit('remove-skill', $event)"

@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+
 .skills {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
   padding: 0 0 30px 0;
+  margin: 0 -24px 0 0;
 
-  li {
+  .skills__item {
     display: inline-block;
     width: calc(50% - 24px);
     list-style: none;
@@ -15,23 +17,11 @@
     @media screen and (max-width: 768px) {
       min-width: 100%;
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
-
-
-}
-
-.item {
-  margin-bottom: 30px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.bottom-line {
-  padding-top: 70px;
-  margin-top: auto;
-  padding-left: 25%;
 }
 
 .icon-component {
@@ -40,22 +30,29 @@
   background: none;
 }
 
-.content {
-  
-  .skills {
 
-    .item {
-      min-width: 100%;
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      color: #373E42;
-      padding-bottom: 0;
-      margin-bottom: 30px;
-    }
+.skill {
+  margin: 0;
+  padding: 0;
+  flex: 1;
+
+  .skill__item {
+    min-width: 100%;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #373E42;
+    padding-bottom: 0;
+    margin-bottom: 30px;
+    list-style: none;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
+
 
 button.round-button-component {
   border: none;
@@ -83,6 +80,14 @@ button.round-button-component {
   }
 }
 
-.input__elem.field__elem{
+.input__elem[placeholder="Новый навык"],
+.input__elem[maxlength="3"]
+{
   border: none;
+}
+
+.input__elem:focus,
+.input__elem:hover {
+  border: none;
+  //outline: none;
 }
