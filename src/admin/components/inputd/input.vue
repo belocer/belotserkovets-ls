@@ -6,7 +6,10 @@
     <tooltip :text="errorMessage"></tooltip>
   </div>
 </label>
-<label class="textarea" v-else-if="fieldType === 'textarea'" v-bind="$attrs" :class="{'error': !!errorMessage}">
+<label class="textarea"
+       v-else-if="fieldType === 'textarea'"
+       v-bind="$attrs"
+       :class="{'error': !!errorMessage}">
   <div class="title" v-if="title">{{title}}</div>
   <textarea class="textarea__elem field__elem" :value="value" :class="{'error' : !!errorMessage}" @input="$emit('input', $event.target.value)"></textarea>
   <div class="input__error-tooltip">
