@@ -12,19 +12,19 @@
                 <app-input
                         placeholder="Название новой группы"
                         :value="value"
-                        @input="$emit('input', $event)"
+                        @input="showErrorMessage"
                         @keydown.native.enter="onApprove"
-
                         autofocus="autofocus"
                         no-side-paddings="no-side-paddings"
                         required
                 ></app-input>
                 <tooltip
-                        v-if="errorMessage !== ''"
+                        v-if="errorMessage.length > 0"
                         :errorText="errorText"
+                        :text="errorMessage"
                         slot="tooltip"
                         v-model="errorMessage"
-                >{{errorMessage}}</tooltip>
+                ></tooltip>
             </div>
             <div class="buttons">
                 <div class="button-icon">
@@ -72,6 +72,13 @@
           this.$emit("approve", this.value);
         }
       },
+      showErrorMessage (e) {
+        if(this.value > 0) {
+          this.title = ''
+        } else {
+          this.errorMessage = 'Заполните поле';
+        }
+      }
     },
     components: {
       icon: () => import("components/icon"),
