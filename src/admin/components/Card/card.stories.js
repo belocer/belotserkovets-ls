@@ -8,9 +8,7 @@ export default {
 export const defaultView = () => ({
   components: { card },
   template: `
-    <card
-      title="Заголовок" 
-    >
+    <card title="Заголовок">
       <h1 slot="content">Содержание</h1>
     </card>
   `,

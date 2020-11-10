@@ -5,7 +5,6 @@
   </headline>
   <menucontainer></menucontainer>
   <sectioncontent>
-
   </sectioncontent>
 </div>
 </template>

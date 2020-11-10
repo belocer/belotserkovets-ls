@@ -17,6 +17,7 @@
         @keydown.native.enter="onApprove"
         autofocus="autofocus"
         no-side-paddings="no-side-paddings"
+
         required
       ></app-input>
 
@@ -51,13 +52,19 @@ export default {
     return {
       editmode: this.editModeByDefault,
       title: this.value,
+      errorMessage: ''
     };
   },
   methods: {
     onApprove() {
+      if(this.value === "") {
+        this.errorMessage = "Заполните поле";
+        console.log("Заполните поле");
+      }
       if (this.title.trim() === "") return false;
       if (this.title.trim() === this.value.trim()) {
         this.editmode = false;
+        
       } else {
         this.$emit("approve", this.value);
       }

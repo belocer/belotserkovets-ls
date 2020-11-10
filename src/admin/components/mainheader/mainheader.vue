@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     hideBtn(e) {
-      console.log('mainheader - ', e);
+      //console.log('mainheader - ', e);
       this.$emit('addgroup', e)
       e.currentTarget.style.display = 'none'
     }

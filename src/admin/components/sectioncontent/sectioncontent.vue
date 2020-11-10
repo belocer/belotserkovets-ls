@@ -10,7 +10,11 @@
         <category @remove="emptyCatIsShow = false" empty></category>
       </li>
       <li class="item" v-for="category in categories" :key="category.id">
-        <category :title="category.category" :skills="category.skills"></category>
+        <category 
+                :title="category.category" 
+                :skills="category.skills"
+                @aprove="validInp"
+        ></category>
       </li>
       <!-- <li>
         <category :title="category.category" :skills="category.skills"></category>
@@ -42,8 +46,11 @@ export default {
     },
     hideBtn(e) {
       this.emptyCatIsShow = true
-      console.log('mainheader - ', e)
+      //console.log('mainheader - ', e)
       e.currentTarget.style.display = 'none'
+    },
+    validInp(e) {
+      console.log(e);
     }
   },
   created() {
