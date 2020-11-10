@@ -42,7 +42,7 @@ export default {
   methods: {
     showgroup(e) {
       this.emptyCatIsShow = true
-      console.log('sectioncontent', e)
+      //console.log('sectioncontent', e)
     },
     hideBtn(e) {
       this.emptyCatIsShow = true

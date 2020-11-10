@@ -15,9 +15,10 @@
         :errorText="errorText"
         @input="$emit('input', $event)"
         @keydown.native.enter="onApprove"
+        slot="errorText"
+        v-model="errorMessage"
         autofocus="autofocus"
         no-side-paddings="no-side-paddings"
-
         required
       ></app-input>
 
@@ -52,14 +53,14 @@ export default {
     return {
       editmode: this.editModeByDefault,
       title: this.value,
-      errorMessage: ''
+      errorMessage: this.errorText
     };
   },
   methods: {
     onApprove() {
       if(this.value === "") {
-        this.errorMessage = "Заполните поле";
         console.log("Заполните поле");
+        this.errorMessage = "Заполните поле";
       }
       if (this.title.trim() === "") return false;
       if (this.title.trim() === this.value.trim()) {

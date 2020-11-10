@@ -55,6 +55,11 @@ export default {
       validator: value => ["", "user", "key"].includes(value)
     }
   },
+  data() {
+    return {
+      errorText: "Заполните поле"
+    }
+  },
   computed: {
     iconClass() {
       const iconName = this.icon;
