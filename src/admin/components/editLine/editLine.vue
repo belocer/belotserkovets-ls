@@ -12,7 +12,7 @@
                 <app-input
                         placeholder="Название новой группы"
                         :value="value"
-                        @input="showErrorMessage"
+                        @input="showErrorMessage($event)"
                         @keydown.native.enter="onApprove"
                         autofocus="autofocus"
                         no-side-paddings="no-side-paddings"
@@ -63,6 +63,8 @@
       onApprove() {
         if (this.value === "") {
           this.errorMessage = 'Заполните поле';
+        } else {
+          this.errorMessage = '';
         }
         if (this.title.trim() === "") return false;
         if (this.title.trim() === this.value.trim()) {
@@ -73,8 +75,9 @@
         }
       },
       showErrorMessage (e) {
-        if(this.value > 0) {
-          this.title = ''
+        console.log(e);
+        if(e.length > 0) {
+          this.errorMessage = ''
         } else {
           this.errorMessage = 'Заполните поле';
         }
