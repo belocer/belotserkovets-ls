@@ -11,8 +11,7 @@
     width: calc(50% - 24px);
     list-style: none;
     margin-right: 24px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 
     @media screen and (max-width: 768px) {
       min-width: 100%;
@@ -20,6 +19,7 @@
 
     &:last-child {
       margin-bottom: 0;
+      margin-right: 24px;
     }
   }
 }
@@ -44,8 +44,12 @@
     font-size: 16px;
     color: #373E42;
     padding-bottom: 0;
-    margin-bottom: 30px;
+    margin-bottom: 17px;
     list-style: none;
+    display: inline-block;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &:last-child {
@@ -90,4 +94,12 @@ button.round-button-component {
 .input__elem:hover {
   border: none;
   //outline: none;
+}
+
+.percent .input .input__elem {
+  border: none;
+}
+
+.skill-component .percent .input input {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 }
