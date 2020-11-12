@@ -1,7 +1,7 @@
 <template>
 <div class="username-component">
   <avatar></avatar>
-  <span class="user-name">Денис Белоцерковецц</span>
+  <span class="user-name">Денис Белоцерковец</span>
   <span class="header">Панель администрирования</span>
 </div>
 </template>
