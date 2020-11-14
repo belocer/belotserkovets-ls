@@ -1,0 +1,117 @@
+@import "../../../styles/mixins.pcss";
+
+.login-page-component {
+  font-family: 'Open sans';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../../images/admin.jpg") center center / cover no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    background: rgba(45, 60, 78, 0.9);
+  }
+}
+
+.form-title {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  text-align: center;
+  color: #43436B;
+  margin-bottom: 29px;
+}
+
+.content {
+  position: relative;
+
+  @include phones {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.row {
+  margin-bottom: 35px;
+}
+
+.btn {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.form {
+  padding: 50px 75px 50px;
+  background: #fff;
+  width: 410px;
+
+  @include phones {
+    width: 100%;
+    padding-right: 7%;
+    padding-left: 7%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.login-input, {
+  text-indent: 30px !important;
+}
+
+.field__elem {
+  text-indent: 30px !important;
+  padding-left: 30px;
+}
+
+label {
+  width: 94%;
+}
+
+.default-btn-container {
+  display: inline-block;
+  text-align: center;
+  width: 70%;
+
+  &:hover {
+    background: linear-gradient(90deg, #0045ed, #3329a2) 50%;
+    transition: all .3s;
+  }
+}
+.input_icon-key .input__elem {
+  text-indent: 30px !important;
+}
+
+.field__elem, .login-input {
+  text-indent: 30px !important;
+}

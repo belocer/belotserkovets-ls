@@ -44,6 +44,7 @@
     @each $icon in (user, key) {
       &-$(icon) {
         .input__elem {
+          text-indent: 30px;
           background-image: svg-load("$(icon).svg", fill=#cfd2d7);
         }
       }
