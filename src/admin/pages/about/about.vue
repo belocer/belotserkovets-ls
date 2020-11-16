@@ -4,7 +4,7 @@
             <mainheader />
             <btnaddgroup @addgroup="hideBtn($event)" v-if="emptyCatIsShow === false" />
         </div>
-        <ul class="skills">
+        <ul class="skills" v-if="categories.length">
             <li class="skills__item" v-if="emptyCatIsShow === true">
                 <category
                     @remove="emptyCatIsShow = false"
@@ -21,6 +21,7 @@
                 ></category>
             </li>
         </ul>
+        <h1 v-else>Loading ... </h1>
     </div>
 </template>
 
@@ -49,8 +50,13 @@
         createCategoryAction: "categories/create",
         fetchCategoryAction: "categories/fetch",
       }),
-      createCategory(categoryTitle){
-        this.createCategoryAction(categoryTitle);
+      async createCategory(categoryTitle){
+        try {
+          await this.createCategoryAction(categoryTitle);
+          this.emptyCatIsShown = false;
+        } catch (error) {
+          console.log(error.message);
+        }
       },
       showgroup(e) {
         this.emptyCatIsShow = true
@@ -66,8 +72,8 @@
       }
     },
     created() {
-      //this.categories = this.fetchCategoryAction();
-      this.categories = require("../../data/categories.json");
+      this.fetchCategoryAction();
+      //this.categories = require("../../data/categories.json");
     }
   }
 </script>

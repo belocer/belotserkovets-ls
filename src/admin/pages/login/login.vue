@@ -64,6 +64,7 @@
           if (isValid === false) return;
           try {
             const response = await $axios.post("/login", this.user);
+            console.log(this.user);
             // belocerkovec
             // 220807
             const token = response.data.token
