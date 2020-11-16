@@ -10,9 +10,10 @@
             <div class="input">
 
                 <app-input
+                        slot="title"
                         placeholder="Название новой группы"
                         :value="value"
-                        @input="showErrorMessage($event)"
+                        @input="$emit('input', $event)"
                         @keydown.native.enter="onApprove"
                         autofocus="autofocus"
                         no-side-paddings="no-side-paddings"
@@ -61,27 +62,29 @@
     },
     methods: {
       onApprove() {
-        if (this.value === "") {
-          this.errorMessage = 'Заполните поле';
-        } else {
-          this.errorMessage = '';
-        }
-        if (this.title.trim() === "") return false;
+        if (this.value.trim() === "") return false;
         if (this.title.trim() === this.value.trim()) {
           this.editmode = false;
-
         } else {
           this.$emit("approve", this.value);
         }
-      },
-      showErrorMessage (e) {
-        console.log(e);
-        if(e.length > 0) {
-          this.errorMessage = ''
-        } else {
+
+        /*console.log(this.title);
+        
+        if (this.title.trim().length > 0) {
           this.errorMessage = 'Заполните поле';
+          return false
+        } else {
+          this.errorMessage = ''
         }
-      }
+
+        if (this.title.trim() === this.value.trim()) {
+          this.editmode = false;
+        } else {
+          this.$emit('approve', this.value);
+        }*/
+      },
+
     },
     components: {
       icon: () => import("components/icon"),

@@ -6,26 +6,29 @@
         </div>
         <ul class="skills">
             <li class="skills__item" v-if="emptyCatIsShow === true">
-                <category @remove="emptyCatIsShow = false" empty></category>
+                <category
+                    @remove="emptyCatIsShow = false"
+                    empty
+                    @approve="createCategory"
+                ></category>
             </li>
             <li class="skills__item" v-for="category in categories" :key="category.id">
                 <category
                         :title="category.category"
                         :skills="category.skills"
-                        @aprove="validInp"
+                        @approve="validInp($event)"
+                        class="fdf4"
                 ></category>
             </li>
-            <!-- <li>
-              <category :title="category.category" :skills="category.skills"></category>
-            </li> -->
         </ul>
     </div>
 </template>
 
 <script>
+  import { mapActions, mapState } from "vuex";
+
   export default {
     props: {},
-    computed: {},
     components: {
       mainheader: () => import("components/mainheader"),
       category: () => import("components/category"),
@@ -33,11 +36,22 @@
     },
     data() {
       return {
-        categories: [],
         emptyCatIsShow: false
       }
     },
+    computed: {
+      ...mapState("categories", {
+        categories: state => state.data
+      })
+    },
     methods: {
+      ...mapActions({
+        createCategoryAction: "categories/create",
+        fetchCategoryAction: "categories/fetch",
+      }),
+      createCategory(categoryTitle){
+        this.createCategoryAction(categoryTitle);
+      },
       showgroup(e) {
         this.emptyCatIsShow = true
         //console.log('sectioncontent', e)
@@ -48,10 +62,11 @@
         e.currentTarget.style.display = 'none'
       },
       validInp(e) {
-        console.log(e);
+        console.log(5242345);
       }
     },
     created() {
+      //this.categories = this.fetchCategoryAction();
       this.categories = require("../../data/categories.json");
     }
   }
